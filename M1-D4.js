@@ -55,7 +55,7 @@ const crazyDiff = (i) => {
 	if (typeof (i) === "number") {
 		if (i > 19) {
 			return i - 19;
-		} else if (i < 19) {
+		} else {
 			return 19 - i;
 		}
 	} else {
