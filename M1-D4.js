@@ -129,7 +129,7 @@ Write a function "upperFirst" to capitalize the first letter of each word of a g
 */
 
 function findFirst(str) {
-	let match = /[a-zA-z]/.exec(str);
+	let match = /[a-zA-z]/.exec(str); // .match will return the value
 	if (match)
 		return match.index;
 	else
@@ -149,17 +149,27 @@ function findLast(str) {
 }
 
 function cutString(str) {
-	return (typeof (str) === "string") ? str.slice(findFirst(str) + 1, findLast(str) - 1) : "Please input a string."
+	return (typeof (str) === "string") ? str.slice(findFirst(str) + 1, findLast(str) - 1) : "Please input a string.";
 }
 
-console.log(cutString("1word")); // expected output: "or"
+// console.log(cutString("1word")); // expected output: "or"
 
 /* EXERCISE 10
 Write a function "giveMeRandom" which accepts a number n and returns an array containing n random numbers between 0 and 10
 */
 
-/* WRITE YOUR CODE HERE */
-
+function giveMeRandom(n) {
+	let array = [];
+	if (typeof (n) === "number") {
+		for (i = 0; i < n; i++) {
+			array.push(Math.floor(Math.random() * 11))
+		}
+		return array;
+	} else {
+		return "Please input a number.";
+	}
+}
+console.log(giveMeRandom(6));
 /* WHEN YOU ARE FINISHED
 Commit and push the code to your personal GitHub repository and share the link to your commit with your tutor.
 */
