@@ -76,7 +76,6 @@ const boundary = (N) => {
 			return true;
 		else
 			return false;
-
 	} else {
 		return "Please input a integer."
 	}
@@ -120,7 +119,7 @@ Write a function "reverseString" to reverse programmatically a given string (es.
 */
 
 function reverseString(s) {
-	return (s === "") ? "" : reverseString(s.substr(1)) + s.charAt(0);
+	return (s === "") ? "" : reverseString(s.substr(1)) + s.charAt(0); //s.split("").reverse().join("")
 }
 //console.log(reverseString("ASDF"));
 
@@ -136,20 +135,41 @@ function findFirst(str) {
 		null;
 }
 
+// function upperFirstEach(str) {
+// 	return (typeof (str) === "string") ? str.slice(0, findFirst(str)) + str.charAt(findFirst(str)).toUpperCase() + str.substr(findFirst(str) + 1) : "Please input a string."
+// }
+
+// function upperFirstEach(str) {
+// 	return str.slice(0, findFirst(str)) + str.charAt(findFirst(str)).toUpperCase() + str.substr(findFirst(str) + 1)
+// }
+
+// function upperFirst(str) {
+// 	let array = str.split(" ")
+// 	for (let i = 0; i < array.length; i++) {
+// 		let convert = upperFirstEach(array[i]);
+// 		let array2 = array.push(convert)
+// 	}
+// 	return array.join(" ");
+// }
 function upperFirst(str) {
-	return (typeof (str) === "string") ? str.slice(0, findFirst(str)) + str.charAt(findFirst(str)).toUpperCase() + str.substr(findFirst(str) + 1) : "Please input a string."
+	let array = str.split(" ")
+	for (Let i = 0; i < array.lenth; i++) {
+		let firstLetter = array[i].charAt(0).toUpperCase();
+		array[i] = firstLetter + array[i].substr(1);
+	}
+	return array.join(" ")
 }
-//console.log(upperFirst("1word"));
+console.log(upperFirst("1word 23books"));
 
 /* EXERCISE 9
 Write a function "cutString" to create a new string without the first and last character of a given string.
 */
-function findLast(str) {
-	return str.length - findFirst(reverseString(str));
-}
+// function findLast(str) {
+// 	return str.length - findFirst(reverseString(str));
+// }
 
 function cutString(str) {
-	return (typeof (str) === "string") ? str.slice(findFirst(str) + 1, findLast(str) - 1) : "Please input a string.";
+	return (typeof (str) === "string") ? str.slice(1, -1) : "Please input a string.";
 }
 
 // console.log(cutString("1word")); // expected output: "or"
