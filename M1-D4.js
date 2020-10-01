@@ -153,13 +153,13 @@ function findFirst(str) {
 // }
 function upperFirst(str) {
 	let array = str.split(" ")
-	for (Let i = 0; i < array.lenth; i++) {
+	for (let i = 0; i < array.lenth; i++) {
 		let firstLetter = array[i].charAt(0).toUpperCase();
 		array[i] = firstLetter + array[i].substr(1);
 	}
 	return array.join(" ")
 }
-console.log(upperFirst("1word 23books"));
+//console.log(upperFirst("1word 23books"));
 
 /* EXERCISE 9
 Write a function "cutString" to create a new string without the first and last character of a given string.
@@ -172,7 +172,7 @@ function cutString(str) {
 	return (typeof (str) === "string") ? str.slice(1, -1) : "Please input a string.";
 }
 
-// console.log(cutString("1word")); // expected output: "or"
+//console.log(cutString("1word")); // expected output: "wor"
 
 /* EXERCISE 10
 Write a function "giveMeRandom" which accepts a number n and returns an array containing n random numbers between 0 and 10
