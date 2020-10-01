@@ -135,30 +135,27 @@ function findFirst(str) {
 		null;
 }
 
-// function upperFirstEach(str) {
-// 	return (typeof (str) === "string") ? str.slice(0, findFirst(str)) + str.charAt(findFirst(str)).toUpperCase() + str.substr(findFirst(str) + 1) : "Please input a string."
-// }
+function upperFirstEach(str) {
+	return str.slice(0, findFirst(str)) + str.charAt(findFirst(str)).toUpperCase() + str.substr(findFirst(str) + 1)
+}
 
-// function upperFirstEach(str) {
-// 	return str.slice(0, findFirst(str)) + str.charAt(findFirst(str)).toUpperCase() + str.substr(findFirst(str) + 1)
-// }
+function upperFirst(str) {
+	let array = str.split(" ")
+	for (let i = 0; i < array.length; i++) {
+		let convert = upperFirstEach(array[i]);
+		array[i] = convert;
+	}
+	return array.join(" ");
+}
 
 // function upperFirst(str) {
 // 	let array = str.split(" ")
-// 	for (let i = 0; i < array.length; i++) {
-// 		let convert = upperFirstEach(array[i]);
-// 		let array2 = array.push(convert)
+// 	for (let i = 0; i < array.lenth; i++) {
+// 		let firstLetter = array[i].charAt(0).toUpperCase();
+// 		array[i] = firstLetter + array[i].substr(1);
 // 	}
-// 	return array.join(" ");
+// 	return array.join(" ")
 // }
-function upperFirst(str) {
-	let array = str.split(" ")
-	for (let i = 0; i < array.lenth; i++) {
-		let firstLetter = array[i].charAt(0).toUpperCase();
-		array[i] = firstLetter + array[i].substr(1);
-	}
-	return array.join(" ")
-}
 //console.log(upperFirst("1word 23books"));
 
 /* EXERCISE 9
