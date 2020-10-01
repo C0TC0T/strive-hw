@@ -11,6 +11,10 @@ Write a function "area" which receives 2 parameters (l1,l2) and calculate the ar
 */
 
 const area = (l1, l2) => l1 * l2;
+// function area = (l1, l2) => l1 * l2; //error
+// function area(l1, l2) {
+// 	return l1 * l2;
+// };
 //console.log(area(3,4));
 
 /* EXERCISE 2
@@ -29,6 +33,13 @@ const crazySum = (i, j) => {
 	}
 }
 
+/* // condensing incomplete
+const crazySum = (i, j) => {
+	i = (typeof (i) === "number" && typeof (j) === "number") ?
+		(i === j ? (i + j) * 3 : i + j) : "Please input two integers.";
+} */
+
+//without verifying
 //const crazySum = (i, j) => (i === j) ? (i + j) * 3 : i + j;
 //console.log(crazySum(3, 3));
 
@@ -61,17 +72,17 @@ Write a function "boundary" which accept an integer N and returns true if N is w
 
 const boundary = (N) => {
 	if (typeof N === "number") {
-		if ((N >= 20 && N <= 100) || N === 400) {
+		if ((N >= 20 && N <= 100) || N === 400)
 			return true;
-		} else {
+		else
 			return false;
-		}
+
 	} else {
 		return "Please input a integer."
 	}
 }
 
-//const boundary = (N) => ((N >= 20 && N <= 100) || N === 400) ? true : false;
+//const boundary = (N) => (typeof (N) === "number" &&(N >= 20 && N <= 100) || N === 400)) ? true : false;
 //console.log(boundary(1));
 
 /* EXERCISE 5
@@ -103,24 +114,45 @@ const check3and7 = (n) => {
 		return "Please input an positive integer."
 	}
 }
-console.log(check3and7(21));
+//console.log(check3and7(21));
 /* EXERCISE 7
 Write a function "reverseString" to reverse programmatically a given string (es.: Strive => evirtS).
 */
 
-/* WRITE YOUR CODE HERE */
+function reverseString(s) {
+	return (s === "") ? "" : reverseString(s.substr(1)) + s.charAt(0);
+}
+//console.log(reverseString("ASDF"));
 
 /* EXERCISE 8
 Write a function "upperFirst" to capitalize the first letter of each word of a given string passed as parameter
 */
 
-/* WRITE YOUR CODE HERE */
+function findFirst(str) {
+	let match = /[a-zA-z]/.exec(str);
+	if (match)
+		return match.index;
+	else
+		null;
+}
+
+function upperFirst(str) {
+	return (typeof (str) === "string") ? str.slice(0, findFirst(str)) + str.charAt(findFirst(str)).toUpperCase() + str.substr(findFirst(str) + 1) : "Please input a string."
+}
+//console.log(upperFirst("1word"));
 
 /* EXERCISE 9
 Write a function "cutString" to create a new string without the first and last character of a given string.
 */
+function findLast(str) {
+	return str.length - findFirst(reverseString(str));
+}
 
-/* WRITE YOUR CODE HERE */
+function cutString(str) {
+	return (typeof (str) === "string") ? str.slice(findFirst(str) + 1, findLast(str) - 1) : "Please input a string."
+}
+
+console.log(cutString("1word")); // expected output: "or"
 
 /* EXERCISE 10
 Write a function "giveMeRandom" which accepts a number n and returns an array containing n random numbers between 0 and 10
