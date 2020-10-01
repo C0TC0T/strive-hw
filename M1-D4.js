@@ -11,10 +11,7 @@ Write a function "area" which receives 2 parameters (l1,l2) and calculate the ar
 */
 
 const area = (l1, l2) => l1 * l2;
-// function area = (l1, l2) => l1 * l2; //error
-// function area(l1, l2) {
-// 	return l1 * l2;
-// };
+
 //console.log(area(3,4));
 
 /* EXERCISE 2
@@ -32,12 +29,6 @@ const crazySum = (i, j) => {
 		return "Please input two integers."
 	}
 }
-
-/* // condensing incomplete
-const crazySum = (i, j) => {
-	i = (typeof (i) === "number" && typeof (j) === "number") ?
-		(i === j ? (i + j) * 3 : i + j) : "Please input two integers.";
-} */
 
 //without verifying
 //const crazySum = (i, j) => (i === j) ? (i + j) * 3 : i + j;
@@ -62,7 +53,7 @@ const crazyDiff = (i) => {
 		return "Please input an integer.";
 	}
 }
-//const crazyDiff = (i) => (i > 19) ? i - 19 : 19 - 1;
+//const crazyDiff = (i) => (i > 0) ? Math.abs(n - 19) * 3 : Math.abs(n - 19);
 // console.log(crazyDiff(3));
 // console.log(crazyDiff(300));
 
@@ -155,7 +146,7 @@ function upperFirst(str) {
 // 	}
 // 	return array.join(" ")
 // }
-console.log(upperFirst("1word 23books"));
+//console.log(upperFirst("1word 23books"));
 
 /* EXERCISE 9
 Write a function "cutString" to create a new string without the first and last character of a given string.
