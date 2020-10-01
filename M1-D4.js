@@ -51,7 +51,7 @@ the specified
 number is greater than 19.
 */
 
-const crazyDiff2 = (i) => {
+const crazyDiff = (i) => {
 	if (typeof (i) === "number") {
 		if (i > 19) {
 			return i - 19;
@@ -139,7 +139,7 @@ function findFirst(str) {
 function upperFirst(str) {
 	return (typeof (str) === "string") ? str.slice(0, findFirst(str)) + str.charAt(findFirst(str)).toUpperCase() + str.substr(findFirst(str) + 1) : "Please input a string."
 }
-console.log(upperFirst("word"));
+//console.log(upperFirst("1word"));
 
 /* EXERCISE 9
 Write a function "cutString" to create a new string without the first and last character of a given string.
