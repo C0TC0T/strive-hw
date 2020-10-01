@@ -54,7 +54,7 @@ number is greater than 19.
 const crazyDiff = (i) => {
 	if (typeof (i) === "number") {
 		if (i > 19) {
-			return i - 19;
+			return (i - 19) * 3;
 		} else {
 			return 19 - i;
 		}
