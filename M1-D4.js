@@ -142,8 +142,7 @@ function upperFirstEach(str) {
 function upperFirst(str) {
 	let array = str.split(" ")
 	for (let i = 0; i < array.length; i++) {
-		let convert = upperFirstEach(array[i]);
-		array[i] = convert;
+		array[i] = upperFirstEach(array[i]);
 	}
 	return array.join(" ");
 }
@@ -156,7 +155,7 @@ function upperFirst(str) {
 // 	}
 // 	return array.join(" ")
 // }
-//console.log(upperFirst("1word 23books"));
+console.log(upperFirst("1word 23books"));
 
 /* EXERCISE 9
 Write a function "cutString" to create a new string without the first and last character of a given string.
