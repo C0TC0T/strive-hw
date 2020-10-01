@@ -139,7 +139,7 @@ function findFirst(str) {
 function upperFirst(str) {
 	return (typeof (str) === "string") ? str.slice(0, findFirst(str)) + str.charAt(findFirst(str)).toUpperCase() + str.substr(findFirst(str) + 1) : "Please input a string."
 }
-//console.log(upperFirst("1word"));
+console.log(upperFirst("word"));
 
 /* EXERCISE 9
 Write a function "cutString" to create a new string without the first and last character of a given string.
@@ -169,7 +169,8 @@ function giveMeRandom(n) {
 		return "Please input a number.";
 	}
 }
-console.log(giveMeRandom(6));
+
+//console.log(giveMeRandom(6));
 /* WHEN YOU ARE FINISHED
 Commit and push the code to your personal GitHub repository and share the link to your commit with your tutor.
 */
