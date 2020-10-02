@@ -423,7 +423,20 @@ function tree(height) {
     }
   }
 }
-tree(5)
+//tree(5)
 /* Ex.23
   Create a function IsItPrime that receives a number and return true if the number is a prime number
 */
+function isItPrime(n) {
+  let i = 2;
+  if (n <= 1) {
+    return false;
+  }
+  while (i <= n / i) {
+    if (n % i === 0)
+      return false;
+    i++;
+  }
+  return true;
+}
+//console.log(isItPrime(13))
