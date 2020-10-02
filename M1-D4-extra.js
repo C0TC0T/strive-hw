@@ -2,11 +2,56 @@
 Write a function "checkArray" which receives an array of random numbers (created with giveMeRandom) and prints, for each item, whether it's bigger than 5.
 The function returs the sum of the numbers bigger than 5.
 */
+const isString = (str) => {
+	return (typeof (str) === "string") ? true : false;
+}
+const isNumber = (nbr) => {
+	return (typeof (nbr) === "number") ? true : false;
+}
+
+function giveMeRandom(n) {
+	let array = [];
+	if (isNumber(n)) {
+		for (i = 0; i < n; i++) {
+			array.push(Math.floor(Math.random() * 11))
+		}
+		return array;
+	} else {
+		return "Please input a number.";
+	}
+}
+
+const checkArray = (arr) => {
+	let sum = [];
+	for (i = 0; i < arr.length; i++) {
+		if (arr[i] > 5) {
+			sum.push(arr[i]);
+		}
+	}
+	return sum.reduce((a, b) => a + b, 0);
+}
+
+// let arr = giveMeRandom(6);
+// console.log(arr);
+// console.log(checkArray(arr));
 
 /* EXERCISE 12
 In your eCommerce you have an array of object called shoppingCart. In this array you have a number of objects with a price, name, id and number to be shipped.
 Create a function "shippingCartTotal" which calculates the total due to the shop.
 */
+
+const shoppingCart = {
+	price: 99,
+	name: "iPhone IX",
+	id: 9,
+	number: 1,
+}
+
+const shippingCartTotal = (cart) => {
+	return shoppingCart.price * shoppingCart.number;
+}
+
+// console.log(shippingCartTotal(shoppingCart));
 
 /* EXERCISE 13
 In your eCommerce you have an array of object called shoppingCart. In this array you have a number of objects with a price, name, id and number to be shipped.
@@ -17,6 +62,8 @@ Create a function "addToShoppingCart" which receives a new object and add it to 
 In your eCommerce you have an array of object called shoppingCart. In this array you have a number of objects with a price, name, id and number to be shipped.
 Create a function "maxShoppingCart" which receives the shoppingCart array and returns the most expensive item in the array.
 */
+
+
 
 /* EXERCISE 15
 In your eCommerce you have an array of object called shoppingCart. In this array you have a number of objects with a price, name, id and number to be shipped.
