@@ -408,11 +408,11 @@ function tree(height) {
     for (i = 0; i < height; i++) {
       let stars = [];
       let width = i;
-      for (k = 0; k < Math.floor(height / 2); k++) {
+      for (k = 0; k < ((height - i) - 1); k++) {
         stars.push(" ")
-        for (j = 0; j <= width; j++) {
-          stars.push("*");
-        }
+      }
+      for (j = 0; j <= (width * 2); j++) {
+        stars.push("*");
       }
       let tmp = stars.join("")
       tre[i] = Object.assign(tmp)
@@ -423,7 +423,7 @@ function tree(height) {
     }
   }
 }
-//tree(5)
+tree(5)
 /* Ex.23
   Create a function IsItPrime that receives a number and return true if the number is a prime number
 */
