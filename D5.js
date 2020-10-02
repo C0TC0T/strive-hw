@@ -423,7 +423,7 @@ function tree(height) {
     }
   }
 }
-tree(5)
+//tree(5)
 /* Ex.23
   Create a function IsItPrime that receives a number and return true if the number is a prime number
 */
