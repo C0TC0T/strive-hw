@@ -97,7 +97,20 @@ const isThisAnEmail = (str) => {
 /* Ex.7
    Write the function WhatDayIsIt that should return the day of the week
 */
-const whatDayIsIt = () => {}
+const daysOfWeek = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
+
+const WhatDayIsIt = () => {
+  const now = new Date();
+  return daysOfWeek[now.getDay() - 1];
+};
 /* Ex.8
     Write the function RollTheDices that receives a numeric input and returns an object that contains both the sum of the value of the dices and the dices itself
     This function should use the Dice function defined in Ex1
