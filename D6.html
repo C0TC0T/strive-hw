@@ -71,9 +71,25 @@
         <textarea id="comment" rows= "6" cols = "20">Feel free to leave any comment here</textarea>
     </form>
     <iframe width="250" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-9.187316894531252%2C61.37830478538427%2C-5.561828613281251%2C62.696829408360756&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=9/62.0447/-7.3746">View Larger Map</a></small>
+    <script>
+        function changeHeadingText() {
+            document.querySelector('h1').innerText="sMaRtPhOnE ShOp";
+        }
+        function backgroundColor() {
+            document.body.style.backgroundColor = "red";
+        }
+        function changeAddress() {
+            document.querySelector('#address').innerText="Address: under the sea"
+        }
+    </script>
+    <form>
+        <input type="button" onClick="changeHeadingText()" value="change heading txt"></input>
+        <input type="button" onClick="backgroundColor()" value="bloody"></input>
+        <input type="button" onClick="changeAddress()" value="new address"></input>
+    </form>
     <footer>
-        <p>Smartphone Shop<br>
-        Address: Faroe Islands, Denmark</p><br>
+        <div id="name"><p>Smartphone Shop<p></div>
+        <div id="address"><p>Address: Faroe Islands, Denmark</p></div>
     </footer>
 </body>
 </html>
