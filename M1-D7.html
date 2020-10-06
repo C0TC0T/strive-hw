@@ -80,7 +80,7 @@
   */
   const paintItGreen = function () {
       let ulAll = document.querySelectorAll('ul');
-      for (let i = 0, i < ulALL.length, i++){
+      for (let i = 0; i < ulALL.length; i++){
           ulAll[i].style.background = "green"
       }
   };
@@ -101,7 +101,13 @@
   */
   const toggleShowImages = function () {
       let img = document.querySelectorAll('img');
-      img.style.display = "hidden";
+      (img[0].style.display !== "none")
+      ? for (i= 0; i < img.length; i++) {
+          img[i].style.display = "none";
+        }
+        : for (i= 0; i < img.length; i++) {
+          img[i].style.display = "";
+        }
   };
 
   //##### EXTRA
