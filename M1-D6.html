@@ -1,0 +1,95 @@
+<html>
+<!--
+        You have been assigned to the creation of a Smartphone Shop Website.
+        The shop is just a showcase of the products of the shop with some extra informations.
+        No shopping cart / checkout features are required.
+        EX1.:
+        Add H1 title with the name of the shop
+        EX2.:
+        Add a TABLE with the top 5 products of the shop
+        EX3.:
+        Each product should have one image, title, description and price
+        EX4.:
+        Add Map to the shop
+        EX5.:
+        Add the thnks to Amazon products for each item in the table
+        EX6.:
+        Add a footer with the address and the name of the shop
+        EX7.:
+        Add a message board where the user can type a message in it (only cthent side)
+        // EXTRA
+        EX8.:
+        Write a function to change the heading text
+        EX9.:
+        Write a function to change the page background color
+        EX10.:
+        Write a function to change the footer address with a fake one
+    -->
+
+<head></head>
+
+<body>
+    <h1>Smartphone Shop</h1>
+    <table>
+    <tbody>
+        <tr>
+            <td>
+                <p title="Palm">Palm</p><br>
+                <img src="https://lh3.googleusercontent.com/proxy/1KeGcCRmf8YwOgr-RikL5pDO12JWgwvChkQqqiSx7KWoYjjG9LKcOy2LnGzW8qrwOPHLugUmUQXkFmLqiLcDxjGlOD5bMTEl7g" width="200"><br>
+                <p>Less is more</p><br>
+                <a href="https://www.amazon.de/-/en/Palm-Pvg100e-Black-32gb-LTE/dp/B07X2WQ93H/ref=sr_1_3?dchild=1&keywords=palm+mini&qid=1601903300&sr=8-3"><p>Price: €219</p></a>
+            </td>
+            <td>
+                <p title="Fairphone 3">Fairphone 3</p><br>
+                <img src="https://m.media-amazon.com/images/I/71xh9l1tlPL._AC_UY218_.jpg" width="200"><br>
+                <p>Best Blackberry ever</p><br>
+                <a href="https://www.amazon.de/-/en/Fairphone-Dual-SIM-Black-001-0000-000100-0001/dp/B07ZQN2YN2/ref=sr_1_4?dchild=1&keywords=Fairphone+3&qid=1601903596&quartzVehicle=72-820&replacementKeywords=fairphone&sr=8-4"><p>Price: €424</p></a>
+            </td>
+            <td>
+                <p title="Nokia 105">Nokia 105</p><br>
+                <img src="https://m.media-amazon.com/images/I/71fi6aoyhAL._AC_UY218_.jpg" height="200"><br>
+                <p>Best Nokia phone ever</p><br>
+                <a href="https://www.amazon.de/-/en/Nokia-Mobile-Colour-Display-Version/dp/B07WGZZN56/ref=sr_1_2?dchild=1&keywords=Nokia+105&qid=1601903573&sr=8-2"<p>Price: €20</p></a>
+            </td>
+            <td>
+                <p title="iPhone SE">iPhone SE</p><br>
+                <img src="https://m.media-amazon.com/images/I/817NmEWIdwL._AC_UY218_.jpg" height="250"><br>
+                <p>New iPhone SE</p><br>
+                <a href ="https://www.amazon.de/-/en/Apple-iPhone-SE-128gb-Black/dp/B0875FBH29/ref=sr_1_3?dchild=1&keywords=apple+iphone+se&qid=1601903540&sr=8-3"><p>Price: €499</p></a>
+            </td>
+            <td>
+                <p title="Asus Zenfone 7">Asus Zenfone 7</p><br>
+                <img src="https://m.media-amazon.com/images/I/611dkusfxxL._AC_UL320_.jpg" width="200"><br>
+                <p>Asus latest Zenfone</p><br>
+                <a href="https://www.amazon.de/-/en/ZenFone-256GB-Mobile-Aurora-Android/dp/B08H5GYHBD/ref=sr_1_6?dchild=1&keywords=zenfone+6&qid=1601903374&sr=8-6"><p>Price: €799</p></a>
+            </td>
+        </tr>
+
+    </tbody>
+    </table>
+    <form>
+        <textarea id="comment" rows= "6" cols = "20">Feel free to leave any comment here</textarea>
+    </form>
+    <iframe width="250" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-9.187316894531252%2C61.37830478538427%2C-5.561828613281251%2C62.696829408360756&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=9/62.0447/-7.3746">View Larger Map</a></small>
+    <script>
+        function changeHeadingText() {
+            document.querySelector('h1').innerText="sMaRtPhOnE ShOp";
+        }
+        function backgroundColor() {
+            document.body.style.backgroundColor = "red";
+        }
+        function changeAddress() {
+            document.querySelector('#address').innerText="Address: under the sea"
+        }
+    </script>
+    <form>
+        <input type="button" onClick="changeHeadingText()" value="change heading txt"></input>
+        <input type="button" onClick="backgroundColor()" value="bloody"></input>
+        <input type="button" onClick="changeAddress()" value="new address"></input>
+    </form>
+    <footer>
+        <div id="name"><p>Smartphone Shop<p></div>
+        <div id="address"><p>Address: Faroe Islands, Denmark</p></div>
+    </footer>
+</body>
+</html>
