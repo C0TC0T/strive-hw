@@ -56,31 +56,53 @@
       Write a function to change the list title (you can use previous day's textarea as input or create a new text input field to grab the content)
   */
   const changeListTitle = function (content) {
-
+    let listTitle = document.querySelector('#listTitle');
+    listTitle.innerText = content.value;
   };
   /* EXERCISE 6
        Write a function to add a new item ONLY to the second list (create an input field + add button)
   */
-  const addToTheSecond = function (content) {};
+  const addToTheSecond = function (content) {
+    let secondList = document.querySelector('#secondList');
+    let newItem = document.createElement('p');
+    newItem.innerText = content.value;
+    secondList.appendChild(newItem);
+  };
   /* EXERCISE 7
       Write a function to make the first UL disappear (button)
   */
-  const firstUlDisappear = function () {};
+  const firstUlDisappear = function () {
+      let ul1 = document.querySelector('#firstList');
+      ul1.style.display = "none";
+  };
   /* EXERCISE 8
       Write a function to make the background of every UL green (button)
   */
-  const paintItGreen = function () {};
+  const paintItGreen = function () {
+      let ulAll = document.querySelectorAll('ul');
+      for (let i = 0, i < ulALL.length, i++){
+          ulAll[i].style.background = "green"
+      }
+  };
 
   /* EXERCISE 9
       Add a "magnifier function" to the table.
       When the user mouse goes on a table cell (not the image one) the font size must increase.
       HINT use mouseenter / mouseleave events
   */
-  const makeThemMagnifiable = function () {};
+  const makeThemMagnifiable = function () {
+    let table = document.querySelectorAll('p');
+      table.addEventListener("mouseenter", function(ev) {
+      ev.target.style.fontsize = "36px";
+      })
+  };
   /* EXERCISE 10
       Add a button to toggle all the product images (toggle => if visible, hide, if not visible, show)
   */
-  const toggleShowImages = function () {};
+  const toggleShowImages = function () {
+      let img = document.querySelectorAll('img');
+      img.style.display = "hidden";
+  };
 
   //##### EXTRA
 
