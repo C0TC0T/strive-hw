@@ -122,9 +122,9 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
       /* EXERCISE 6:
                 Create a method "removeLast" which removes the last item from the task list
             */
+      //Err nothing happens
       const removeLast = function () {
-        let listItems = document.querySelectorAll('ul li');
-        listItems[listItems.length - 1].style.display = "none";
+        document.querySelectorAll('.newTask')[document.querySelectorAll('.newTask').length - 1].style.display = "none";
       };
       /* EXERCISE 7:
                 Create a method "removeFirst" which removes the first item from the task list
@@ -134,7 +134,8 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
       };
       /* EXERCISE 8:
                Create a method "getTasksAsArray" which returns (and print to the console) an array containing the tasks as string
-      //       */
+             */
+      //Err this breaks addNewTask
       // const getTasksAsArray = function () {
       //   let listItems = document.querySelectorAll('ul li');
       //   let object = [];
@@ -161,6 +162,7 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
                - Break the code into many function for semplicity
                - Reuse the functions previously created
             */
+           // err, bubbleSort is not defined
            const bubbleSort = function () {
             let listItems = document.querySelectorAll('ul li');
             let obj = [];
