@@ -22,6 +22,49 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
        Create a CSS class for the task list item with a border, a bold text and a bigger font size
        Style every button of the page to be bigger
     */
+    body {
+      background: #d5e1df;
+      }
+    ul {
+      list-style-type: square;
+      list-style-position: inside;
+      background: #b5e7a0;
+      font-weight: 600;
+      font-size: 1.2em;
+      padding: 0;
+      width: 50vw;
+
+      }
+      ul li{
+        padding-left: 8px;
+        border: thick double #444;
+      }
+    input[type="button"] {
+      width: 200px;
+      border: 0;
+      -moz-box-shadow:inset 0px 1px 0px 0px #9acc85;
+      -webkit-box-shadow:inset 0px 1px 0px 0px #9acc85;
+      box-shadow:inset 0px 1px 0px 0px #9acc85;
+      background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #74ad5a), color-stop(1, #68a54b) );
+      background:-moz-linear-gradient( center top, #74ad5a 5%, #68a54b 100% );
+      -webkit-border-top-left-radius:5px;
+      -moz-border-radius-topleft:5px;
+      border-top-left-radius:5px;
+      -webkit-border-top-right-radius:5px;
+      -moz-border-radius-topright:5px;
+      border-top-right-radius:5px;
+      -webkit-border-bottom-right-radius:5px;
+      -moz-border-radius-bottomright:5px;
+      border-bottom-right-radius:5px;
+      -webkit-border-bottom-left-radius:5px;
+      -moz-border-radius-bottomleft:5px;
+      border-bottom-left-radius:5px;
+      text-indent:0;
+      display:inline-block;
+      color: #fff;
+      text-align:center;
+      position:relative;
+    }
     </style>
   </head>
   <body>
@@ -39,12 +82,12 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
     <!-- EXERCISE 3
         Create a button "Remove Last Task" to trigger the method "removeLast"
         -->
-
+    <input type="button" value="Remove Last Task" onlick="removeLast()">
     <!-- EXERCISE 4
         Create a button "Remove First Task" to trigger the method "removeFirst"
         -->
-
-    <ul id="myTaskList"></ul>
+    <input type="button" value="Remove First Task" onclick="removeFirst()">
+    <ul id="myTaskList"></ul> <!--TaskList-->
 
     <hr />
 
@@ -67,24 +110,46 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
                 - Use the document.createElement to create the new List Item
                 - Append the child to the UL
             */
-
+      const addNewTask = function () {
+        let newTask = document.getElementById('newTask');
+        let myTaskList = document.getElementById('myTaskList');
+        let newItem = document.createElement('li');
+        newItem.innerText = newTask.value;
+        newItem.className = "newTask";
+        myTaskList.appendChild(newItem);
+        newTask.value='';
+      };
       /* EXERCISE 6:
                 Create a method "removeLast" which removes the last item from the task list
             */
-
+      const removeLast = function () {
+        let listItems = document.querySelectorAll('ul li');
+        listItems[listItems.length - 1].style.display = "none";
+      };
       /* EXERCISE 7:
                 Create a method "removeFirst" which removes the first item from the task list
             */
-
+      const removeFirst = function () {
+        document.querySelectorAll('ul li')[0].style.display = "none";
+      };
       /* EXERCISE 8:
                Create a method "getTasksAsArray" which returns (and print to the console) an array containing the tasks as string
-            */
-
+      //       */
+      // const getTasksAsArray = function () {
+      //   let listItems = document.querySelectorAll('ul li');
+      //   let object = [];
+      //   object.push(listItems.value.toString());
+      //   console.log(object);
+      // }
       /* EXERCISE 9:
                Create a method "changeTaskBackgroundColor" which takes the color from the color picker with an
                onchange event listener ad applies it as background to every list item
-            */
+      //       */
 
+
+      const changeTaskBackgroundColor = function () {
+        document.querySelector('#myTaskList').style.background = document.querySelector('#colorPicker').value
+      }
       /* EXTRA */
 
       /* EXERCISE 10:
@@ -96,6 +161,20 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
                - Break the code into many function for semplicity
                - Reuse the functions previously created
             */
+           const bubbleSort = function () {
+            let listItems = document.querySelectorAll('ul li');
+            let obj = [];
+            for (let i = 0; i < listItems.length; i++) {
+              if (listItems[i].textContent.slice(0,1) >
+              listItems[i+1].textContent.slice(0,1)){
+                continue;
+              } else {
+                let tmp = listItems[i].textContent;
+                listItems[i].textContent = listItems[i+1].textContent;
+                listItems[i+1].textContent = tmp;
+              }
+            }
+           }
     </script>
   </body>
 </html>
