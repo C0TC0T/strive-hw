@@ -35,7 +35,7 @@
                 margin:0 auto;
                 height: 5%;
             }
-            #board {
+            .bingoBoard {
                 margin: 0;
                 background: #000;
                 color: white;
@@ -44,7 +44,7 @@
                 border: 6px solid transparent;
                 border-radius: 8px;
             }
-            #board .boardNumbers {
+            .bingoBoard .boardNumbers {
                 color: #ffffff;
                 display: inline-block;
                 width: 19.5%;
@@ -107,28 +107,50 @@
             // return seventySix;
         }
 
-        const newCard = function () {
+        const firstCard = function () {
             let seventySix = [];
-            for(let i = 0; i < 76; i++) {
-                seventySix.push(i+1);
-            }
+                for(let i = 0; i < 76; i++) {
+                    seventySix.push(i+1);
+                }
             let array = []
             // console.log(seventySix);
-            for (let i = 0; i < 25; i++) {
-                let j = Math.floor(Math.random() * (76 - i));
-                array.push(seventySix[j])
-                seventySix.splice(j,1)
-            }
+                for (let i = 0; i < 25; i++) {
+                    let j = Math.floor(Math.random() * (76 - i));
+                    array.push(seventySix[j])
+                    seventySix.splice(j,1)
+                }
             const board = document.querySelector('#board');
-            for (let i = 0; i < 25; i++) {
-                const child = document.createElement('div');
-                child.className = "boardNumbers";
-                const boardNumbers = document.createElement('h2');
-                boardNumbers.innerText = array[i];
-                child.appendChild(boardNumbers)
-                board.appendChild(child);
-            }
-        // return array;
+                for (let i = 0; i < 25; i++) {
+                    const child = document.createElement('div');
+                    child.className = "boardNumbers";
+                    const boardNumbers = document.createElement('h2');
+                    boardNumbers.innerText = array[i];
+                    child.appendChild(boardNumbers)
+                    board.appendChild(child);
+        }
+    }
+        const newCard = function () {
+            let seventySix = [];
+                for(let i = 0; i < 76; i++) {
+                    seventySix.push(i+1);
+                }
+            let array = []
+            // console.log(seventySix);
+                for (let i = 0; i < 25; i++) {
+                    let j = Math.floor(Math.random() * (76 - i));
+                    array.push(seventySix[j])
+                    seventySix.splice(j,1)
+                }
+            const board = document.querySelector('.bingoboard');
+                for (let i = 0; i < 25; i++) {
+                    const child = document.createElement('div');
+                    child.className = "boardNumbers";
+                    const boardNumbers = document.createElement('h2');
+                    boardNumbers.innerText = array[i];
+                    child.appendChild(boardNumbers)
+                    board.appendChild(child);
+                }
+            // return array;
         }
         const lucky = function () {
             let luck = Math.floor(Math.random() * 76 + 1);
@@ -137,7 +159,7 @@
         <!-- LOAD -->
         window.onload = function () {
             leader();
-            newCard();
+            firstCard();
             //results
             let resultNumbers = document.querySelector('#resultNumbers')
             let nbr = document.createElement('div');
@@ -147,7 +169,7 @@
             let boardNumbers = document.querySelectorAll('.boardNumbers');
             let leaderboardNumbers = document.querySelectorAll('.leaderboardNumbers')
 
-            luckyButton.onclick = function (event){
+            luckyButton.onclick = function (event) {
                 result.push(lucky());
                 leaderboardNumbers[result[result.length - 1] -1].classList.add("bingo")
                 let array = [];
@@ -158,6 +180,13 @@
                         boardNumbers[i].classList.add("bingo");
                     }
                 }
+            let cardsTotal = 1;
+            newCardButton.onclick = function (event) {
+                cardsTotal += 1;
+                const newBoard = document.createElement('div');
+                newBoard.className = "bingoBoard";
+                mewCard();
+            }
             // print new result in page bottom
             const newResult = document.querySelector("#newResult").innerText = result;
             }
@@ -166,9 +195,11 @@
         <h1>Lottery</h1>
         <div id="leaderBoard"></div>
         <br>
-        <div id="board"></div>
+        <div id="board" class="bingoBoard"></div>
         <div id="cards">
-            <input type="button" value="New Card">
+            <div id="newCardButton">
+                <input type="button" value="New Card">
+            </div>
         </div>
         <div id="lucky">
             <div id="luckyButton">
