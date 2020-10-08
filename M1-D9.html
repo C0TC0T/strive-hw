@@ -96,7 +96,7 @@
             // let luckyNumber = []
             // luckyNumber.push(array[luck]);
             // console.log(luckyNumber);
-            console.log(array[luck]);
+            // console.log(array[luck]);
             return array[luck];
           }
 
@@ -122,7 +122,12 @@
                     array.push(boardNumbers[i].innerText)
                     }
                 // todo match board numbers
-                array.match(result)
+                for (i = 0; i < 42; i++){
+                    if (array[i] === result[result.length-1]){
+                        console.log(array[i])
+
+                    }
+                  }
                 }
             }
 
