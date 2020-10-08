@@ -67,23 +67,24 @@
             for(let i = 0; i < 76; i++) {
                 seventySix.push(i+1);
             }
+            let array = []
             // console.log(seventySix);
             for (let i = 0; i < 42; i++) {
-                let j = Math.floor(Math.random() * 77);
-                seventySix.push(j);
+                let j = Math.floor(Math.random() * (76 - i));
+                array.push(seventySix[j])
+                seventySix.splice(j,1)
             }
-            seventySix.splice(0,76);
-            // console.log(seventySix);
+            console.log(array);
             const board = document.querySelector('#board');
             for (let i = 0; i < 42; i++) {
                 const child = document.createElement('div');
                 child.className = "boardNumbers";
                 const boardNumbers = document.createElement('h2');
-                boardNumbers.innerText = seventySix[i];
+                boardNumbers.innerText = array[i];
                 child.appendChild(boardNumbers)
                 board.appendChild(child);
             }
-            return seventySix;
+            // return array;
           }
           const lucky = function () {
             let boardNumbers = [];
@@ -125,7 +126,7 @@
                 for (i = 0; i < 42; i++){
                     if (array[i] === result[result.length-1]){
                         console.log(array[i])
-
+                        document.querySelectorAll('.boardNumbers')[i].style.background = "red"
                     }
                   }
                 }
