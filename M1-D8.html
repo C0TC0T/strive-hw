@@ -138,14 +138,13 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
       /* EXERCISE 8:
                Create a method "getTasksAsArray" which returns (and print to the console) an array containing the tasks as string
              */
-      //Err obj is an empty array even with [0]
       const getTasksAsArray = function () {
-        let listItems = document.querySelectorAll('ul li');
-        let object = [];
+        let listItems = document.querySelectorAll('li');
+        let arr = [];
         for (let i= 0; i < listItems.length; i++) {
-          object.push(listItems[i].textContent.toString());
+          arr.push(listItems[i].innerText);
         }
-        return obj;
+        return arr;
       }
       /* EXERCISE 9:
                Create a method "changeTaskBackgroundColor" which takes the color from the color picker with an
