@@ -13,30 +13,54 @@
     <head>
         <style>
             body {
-            max-width: 700px;
+            max-width: 90vw;
             margin: 0 auto;
+            }
+
+            #leaderBoard {
+                margin: 0;
+                background: #000;
+                color: white;
+                width: 90vw;
+                margin-bottom: 20px;
+                border: 6px solid transparent;
+                border-radius: 8px;
+            }
+            .leaderboardNumbers {
+                color: #ffffff;
+                display: inline-block;
+                width: 12%;
+                text-align: center;
+                border: 1px solid transparent;
+                margin:0 auto;
+                height: 5%;
             }
             #board {
                 margin: 0;
                 background: #000;
                 color: white;
-                width: 100%;
+                width: 45vw;
                 margin-bottom: 20px;
                 border: 6px solid transparent;
                 border-radius: 8px;
             }
-            .boardNumbers {
+            #board .boardNumbers {
                 color: #ffffff;
                 display: inline-block;
-                width: 14%;
+                width: 19.5%;
                 text-align: center;
                 border: 1px solid transparent;
                 margin:0 auto;
             }
-            .day h2 {
+            h2 {
                 font-weight: 300;
                 font-size: 26px;
                 margin-top: calc(100px / 2 - 22px);
+            }
+            h3 {
+                font-weight: 300;
+                font-size: 20px;
+                margin: 8px auto;
             }
             input {
                 width: 100%;
@@ -54,6 +78,7 @@
                 cursor: pointer;
                 min-height: 44px;
                 border-radius: 6px;
+                margin-bottom: 20px;
             }
             h1 {
                 font-size: 64px;
@@ -62,21 +87,37 @@
     </head>
     <body>
         <script>
-          const numbers = function () {
+            const leader = function () {
+                let seventySix = [];
+            for(let i = 0; i < 76; i++) {
+                seventySix.push(i + 1);
+            }
+            const board = document.querySelector('#leaderBoard');
+            for (let i = 0; i < 76; i++) {
+                const child = document.createElement('div');
+                child.className = "leaderboardNumbers";
+                const boardNumbers = document.createElement('h3');
+                boardNumbers.innerText = seventySix[i];
+                child.appendChild(boardNumbers)
+                board.appendChild(child);
+            }
+        }
+
+          const newCard = function () {
             let seventySix = [];
             for(let i = 0; i < 76; i++) {
                 seventySix.push(i+1);
             }
             let array = []
             // console.log(seventySix);
-            for (let i = 0; i < 42; i++) {
+            for (let i = 0; i < 25; i++) {
                 let j = Math.floor(Math.random() * (76 - i));
                 array.push(seventySix[j])
                 seventySix.splice(j,1)
             }
             console.log(array);
             const board = document.querySelector('#board');
-            for (let i = 0; i < 42; i++) {
+            for (let i = 0; i < 25; i++) {
                 const child = document.createElement('div');
                 child.className = "boardNumbers";
                 const boardNumbers = document.createElement('h2');
@@ -87,25 +128,27 @@
             // return array;
           }
           const lucky = function () {
-            let boardNumbers = [];
-              boardNumbers = document.querySelectorAll('h2');
-              let array = [];
-              for (i = 0; i < 42; i++) {
-                array.push(boardNumbers[i].innerText)
-              }
-            let luck = Math.floor(Math.random() * 42);
+            // let boardNumbers = [];
+            //   boardNumbers = document.querySelectorAll('h2');
+            //   let array = [];
+            //   for (i = 0; i < 25; i++) {
+            //     array.push(boardNumbers[i].innerText)
+            //   }
+            let luck = Math.floor(Math.random() * 76 + 1);
             // let luckyNumber = []
             // luckyNumber.push(array[luck]);
             // console.log(luckyNumber);
             // console.log(array[luck]);
-            return array[luck];
+            return luck;
           }
 
           const array = function () {
 
           }
+          <!-- LOAD -->
           window.onload = function () {
-            numbers(); // should have use global
+            leader();
+            newCard();
 
             let resultNumbers = document.querySelector('#resultNumbers')
             let nbr = document.createElement('div');
@@ -114,17 +157,17 @@
             const luckyButton = document.querySelector('#luckyButton');
             let result = [];
             luckyButton.onclick = function (event){
-                result.push(lucky())
+                result.push(lucky());
+                console.log(result);
+                // print new result in page bottom
                 const newResult = document.querySelector("#newResult").innerText = result;
                 let boardNumbers = [];
                 boardNumbers = document.querySelectorAll('h2');
-                let array = [];
-                for (i = 0; i < 42; i++) {
-                    array.push(boardNumbers[i].innerText)
-                    }
+
+
                 // todo match board numbers
-                for (i = 0; i < 42; i++){
-                    if (array[i] === result[result.length-1]){
+                for (i = 0; i < 25; i++){
+                    if (array[i] === result[result.length-1]) {
                         console.log(array[i])
                         document.querySelectorAll('.boardNumbers')[i].style.background = "red"
                     }
@@ -134,7 +177,12 @@
 
         </script>
         <h1>Lottery</h1>
+        <div id="leaderBoard"></div>
+        <br>
         <div id="board"></div>
+        <div id="cards">
+            <input type="button" value="New Card">
+        </div>
         <div id="lucky">
             <div id="luckyButton">
                 <input type="button" value="Am I lucky">
