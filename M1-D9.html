@@ -83,6 +83,11 @@
             h1 {
                 font-size: 64px;
             }
+            #newResult {
+                font-weight: 300;
+                font-style: italic;
+                font-size: 16px;
+            }
             .bingo {
                 background-color: red;
             }
@@ -188,7 +193,7 @@
                 mewCard();
             }
             // print new result in page bottom
-            const newResult = document.querySelector("#newResult").innerText = result;
+            document.querySelector("#newResult").innerText = `The Lucky Numbers are ${result}` ;
             }
         }
         </script>
