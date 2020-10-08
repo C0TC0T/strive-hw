@@ -83,12 +83,15 @@
             h1 {
                 font-size: 64px;
             }
+            .bingo {
+                background-color: red;
+            }
         </style>
     </head>
     <body>
         <script>
-            const leader = function () {
-                let seventySix = [];
+        const leader = function () {
+            let seventySix = [];
             for(let i = 0; i < 76; i++) {
                 seventySix.push(i + 1);
             }
@@ -96,14 +99,15 @@
             for (let i = 0; i < 76; i++) {
                 const child = document.createElement('div');
                 child.className = "leaderboardNumbers";
-                const boardNumbers = document.createElement('h3');
-                boardNumbers.innerText = seventySix[i];
-                child.appendChild(boardNumbers)
+                const leaderboardNumbers = document.createElement('h3');
+                leaderboardNumbers.innerText = seventySix[i];
+                child.appendChild(leaderboardNumbers)
                 board.appendChild(child);
             }
+            // return seventySix;
         }
 
-          const newCard = function () {
+        const newCard = function () {
             let seventySix = [];
             for(let i = 0; i < 76; i++) {
                 seventySix.push(i+1);
@@ -115,7 +119,6 @@
                 array.push(seventySix[j])
                 seventySix.splice(j,1)
             }
-            console.log(array);
             const board = document.querySelector('#board');
             for (let i = 0; i < 25; i++) {
                 const child = document.createElement('div');
@@ -125,56 +128,40 @@
                 child.appendChild(boardNumbers)
                 board.appendChild(child);
             }
-            // return array;
-          }
-          const lucky = function () {
-            // let boardNumbers = [];
-            //   boardNumbers = document.querySelectorAll('h2');
-            //   let array = [];
-            //   for (i = 0; i < 25; i++) {
-            //     array.push(boardNumbers[i].innerText)
-            //   }
+        // return array;
+        }
+        const lucky = function () {
             let luck = Math.floor(Math.random() * 76 + 1);
-            // let luckyNumber = []
-            // luckyNumber.push(array[luck]);
-            // console.log(luckyNumber);
-            // console.log(array[luck]);
             return luck;
-          }
-
-          const array = function () {
-
-          }
-          <!-- LOAD -->
-          window.onload = function () {
+        }
+        <!-- LOAD -->
+        window.onload = function () {
             leader();
             newCard();
-
+            //results
             let resultNumbers = document.querySelector('#resultNumbers')
             let nbr = document.createElement('div');
             nbr.className = "luckyNumbers";
-
             const luckyButton = document.querySelector('#luckyButton');
             let result = [];
+            let boardNumbers = document.querySelectorAll('.boardNumbers');
+            let leaderboardNumbers = document.querySelectorAll('.leaderboardNumbers')
+
             luckyButton.onclick = function (event){
                 result.push(lucky());
-                console.log(result);
-                // print new result in page bottom
-                const newResult = document.querySelector("#newResult").innerText = result;
+                leaderboardNumbers[result[result.length - 1] -1].classList.add("bingo")
+                let array = [];
                 let boardNumbers = [];
-                boardNumbers = document.querySelectorAll('h2');
-
-
-                // todo match board numbers
-                for (i = 0; i < 25; i++){
-                    if (array[i] === result[result.length-1]) {
-                        console.log(array[i])
-                        document.querySelectorAll('.boardNumbers')[i].style.background = "red"
+                boardNumbers = document.querySelectorAll('.boardNumbers');
+                for (let i = 0; i < 25; i++) {
+                    if (result[result.length - 1] === parseInt(boardNumbers[i].innerText)) {
+                        boardNumbers[i].classList.add("bingo");
                     }
-                  }
                 }
+            // print new result in page bottom
+            const newResult = document.querySelector("#newResult").innerText = result;
             }
-
+        }
         </script>
         <h1>Lottery</h1>
         <div id="leaderBoard"></div>
