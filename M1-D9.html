@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <!--
+        BINGO CHALLENGE!!!
+        Create programmatically (with JS) a BINGO board with 76 cells, from 1 to 76.
+        Create a button to randomize a number from 1 to 76. The same number should be highlighted on the bingo board
+
+        EXTRA:
+        - Take ALWAYS a new number (avoid randoming 10 3 times for example)
+        - Create a USER BOARD with random 24 numbers that highlights as the main board does
+        - Let the user choose HOW MANY user boards he's willing to play with and create them.
+    -->
+    <head>
+        <style>
+            body {
+            max-width: 700px;
+            margin: 0 auto;
+            }
+            #board {
+                margin: 0;
+                background: #000;
+                color: white;
+                width: 100%;
+                margin-bottom: 20px;
+                border: 6px solid transparent;
+                border-radius: 8px;
+            }
+            .boardNumbers {
+                color: #ffffff;
+                display: inline-block;
+                width: 14%;
+                text-align: center;
+                border: 1px solid transparent;
+                margin:0 auto;
+            }
+            .day h2 {
+                font-weight: 300;
+                font-size: 26px;
+                margin-top: calc(100px / 2 - 22px);
+            }
+            input {
+                width: 100%;
+                min-height: 24px;
+                background-color: #1b1b1b;
+                color: white;
+                border: none;
+                border-radius: 3px;
+                padding: 10px;
+                font-weight: bold;
+            }
+            input[type="button"] {
+                background-color: #00ff84;
+                color: #1b1b1b;
+                cursor: pointer;
+                min-height: 44px;
+                border-radius: 6px;
+            }
+            h1 {
+                font-size: 64px;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+          const numbers = function () {
+            let seventySix = [];
+            for(let i = 0; i < 76; i++) {
+                seventySix.push(i+1);
+            }
+            // console.log(seventySix);
+            for (let i = 0; i < 42; i++) {
+                let j = Math.floor(Math.random() * 77);
+                seventySix.push(j);
+            }
+            seventySix.splice(0,76);
+            // console.log(seventySix);
+            const board = document.querySelector('#board');
+            for (let i = 0; i < 42; i++) {
+                const child = document.createElement('div');
+                child.className = "boardNumbers";
+                const boardNumbers = document.createElement('h2');
+                boardNumbers.innerText = seventySix[i];
+                child.appendChild(boardNumbers)
+                board.appendChild(child);
+            }
+            return seventySix;
+          }
+          const lucky = function () {
+            let boardNumbers = [];
+              boardNumbers = document.querySelectorAll('h2');
+              let array = [];
+              for (i = 0; i < 42; i++) {
+                array.push(boardNumbers[i].innerText)
+              }
+            let luck = Math.floor(Math.random() * 42);
+            // let luckyNumber = []
+            // luckyNumber.push(array[luck]);
+            // console.log(luckyNumber);
+            console.log(array[luck]);
+            return array[luck];
+          }
+
+          const array = function () {
+
+          }
+          window.onload = function () {
+            numbers(); // should have use global
+
+            let resultNumbers = document.querySelector('#resultNumbers')
+            let nbr = document.createElement('div');
+            nbr.className = "luckyNumbers";
+
+            const luckyButton = document.querySelector('#luckyButton');
+            let result = [];
+            luckyButton.onclick = function (event){
+                result.push(lucky())
+                const newResult = document.querySelector("#newResult").innerText = result;
+                let boardNumbers = [];
+                boardNumbers = document.querySelectorAll('h2');
+                let array = [];
+                for (i = 0; i < 42; i++) {
+                    array.push(boardNumbers[i].innerText)
+                    }
+                // todo match board numbers
+                array.match(result)
+                }
+            }
+
+        </script>
+        <h1>Lottery</h1>
+        <div id="board"></div>
+        <div id="lucky">
+            <div id="luckyButton">
+                <input type="button" value="Am I lucky">
+            </div>
+        <div id="resultNumbers">
+            <span id ="newResult"></span>
+        </div>
+        </div>
+    </body>
+</html>
