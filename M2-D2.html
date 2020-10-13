@@ -84,6 +84,11 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
     header {
       /* padding: 156px 0 100px; */
     }
+
+    .randomAlbumArts {
+      width: 200px;
+      display: flex;
+    }
   </style>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
@@ -203,8 +208,8 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
   <section id="favAlbums">
     <div class="container">
       <div class="album-container">
-        <div class="row">
-          <div class="col col-sm-6 col-md-4 col-lg-3">
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4">
+          <div class="col">
             <div class="card">
               <img src="https://i.scdn.co/image/ab67616d0000b27380573b550211a163008a377d"
                 class="card-img-top img-fluid img-thumbnail album-cover" alt="Aimer 16th single">
@@ -225,12 +230,14 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
               <div class="album-genre mx-auto">
                 <span class="badge badge-pill badge-warning">JPOP
                 </span>
+                <span class="badge badge-pill badge-warning">Anime
+                </span>
               </div> <a href="https://open.spotify.com/album/3mWNdupjokTYVrE8TPVV8x" class="btn btn-info"
                 style="margin: 8px 8px;">Listen on Spotify</a>
             </div>
           </div>
 
-          <div class="col col-sm-6 col-md-4 col-lg-3">
+          <div class="col">
             <div class="card">
               <img src="https://i.scdn.co/image/ab67616d0000b273924ad89f6086e0d722122286"
                 class="img-fluid img-thumbnail album-cover" alt="Gogo penguin first album">
@@ -257,7 +264,7 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
             </div>
           </div>
 
-          <div class="col col-sm-6 col-md-4 col-lg-3">
+          <div class="col">
             <div class="card">
               <img
                 src="https://img.discogs.com/qKrPA4ZLOl8o64xsy0txlteGmjA=/fit-in/600x608/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2201083-1269484172.jpeg.jpg"
@@ -293,7 +300,7 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
             </div>
           </div>
 
-          <div class="col col-sm-6 col-md-4 col-lg-3">
+          <div class="col">
             <div class="card"><img src="https://i.scdn.co/image/ab67616d0000b27330f8e0f777376780c4077507"
                 class=" card-img-top img-fluid img-thumbnail album-cover" alt="Pendulum latest album">
 
@@ -378,28 +385,98 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
 
   <section id="#bestMusicians">
     <div class="container">
-      <img
-        src="https://lastfm.freetls.fastly.net/i/u/770x0/c7c1c6472a51cb4fee3f97ddf3907273.webp#c7c1c6472a51cb4fee3f97ddf3907273"
-        alt="avatar">
-      <p class="text-justify">Miss Ringo is a popular Japanese singer-songwriter who’s gotten some attention in the
-        West.
-        She seems to go for a mix of jazz and pop-inspired elements in her music. This could potentially turn into a
-        mess,
-        but Shiina is very good at her job. She’s a fine pianist (and she can play a bunch of other instruments as well)
-        and a great songwriter – almost every song of hers I’ve heard so far is catchy as hell. For an example, check
-        out <a href="https://www.youtube.com/watch?v=Sy_08-HcR3Y">this song! </a> Shiina Ringo is one of the few
-        singer-songwriter types I care for at all. A lot of the really popular ones seem kind of overrated to me, and
-        some of them are full of themselves or attention-grabbers etc. which can come through in their lyrics
-        sometimes. I have no idea what she’s like – from the little I’ve read, she doesn’t say much about herself and
-        puts on a mysterious persona. And since I can’t understand most of her lyrics, their contents don’t present
-        any problem to me. It might sound weird, but I prefer not to know what she’s singing about. Though it’s
-        possible her lyrics are really profound. I have no idea. If this post seems short, it’s because I have a hard
-        time writing about music. A few writers are really good at it and I’m not among their number. For me, trying
-        to describe music to someone through words is a poor substitute for just playing the music for them, so check
-        out the links above instead if you’re interested.</p>
+      <div class="row">
+        <div class="col-sm-12 col-md-6 mx-auto">
+          <figure class="figure">
+            <img class="img-fluid rounded float-left img-thumbnail"
+              src="https://lastfm.freetls.fastly.net/i/u/770x0/c7c1c6472a51cb4fee3f97ddf3907273.webp#c7c1c6472a51cb4fee3f97ddf3907273"
+              alt="avatar">
+            <figcaption class="figure-caption text-right">椎名林檎</figcaption>
+          </figure>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <p class="text-justify text-warp">
+
+            Miss Ringo is a popular Japanese singer-songwriter who’s gotten some attention
+            in the
+            West.
+            She seems to go for a mix of jazz and pop-inspired elements in her music. This could potentially turn into a
+            mess,
+            but Shiina is very good at her job. She’s a fine pianist (and she can play a bunch of other instruments as
+            well)
+            and a great songwriter – almost every song of hers I’ve heard so far is catchy as hell. For an example,
+            check
+            out <a href="https://www.youtube.com/watch?v=Sy_08-HcR3Y">this song</a>! Shiina Ringo is one of the few
+            singer-songwriter types I care for at all. A lot of the really popular ones seem kind of overrated to me,
+            and
+            some of them are full of themselves or attention-grabbers etc. which can come through in their lyrics
+            sometimes. I have no idea what she’s like – from the little I’ve read, she doesn’t say much about herself
+            and
+            puts on a mysterious persona. And since I can’t understand most of her lyrics, their contents don’t present
+            any problem to me. It might sound weird, but I prefer not to know what she’s singing about. Though it’s
+            possible her lyrics are really profound. I have no idea. If this post seems short, it’s because I have a
+            hard
+            time writing about music. A few writers are really good at it and I’m not among their number. For me, trying
+            to describe music to someone through words is a poor substitute for just playing the music for them, so
+            check
+            out the links above instead if you’re interested.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
-  <footer></footer>
+
+  <section id="albumArts">
+    <div id="container">
+      <div class="row row-cols-lg-5 row-cols-md-4 row-cols-sm-2 mx-auto" style="width: 80vw">
+        <img src="https://i.scdn.co/image/ab67616d0000b2733e57b4ee6a7e1ea884fe3723"
+          class="img-fluid img-thumbnail float-left randomAlbumArts d-block" alt="random album arts">
+        <img src="https://i.scdn.co/image/ab67616d0000b2733483c67a7eb215608a3037fe"
+          class="img-fluid img-thumbnail float-left randomAlbumArts d-block" alt="random album arts">
+        <img src="https://i.scdn.co/image/ab67616d0000b2735a1e5f4683e25875fe6cc189"
+          class="img-fluid img-thumbnail float-left randomAlbumArts d-block" alt="random album arts">
+        <img src="https://i.scdn.co/image/ab67616d0000b273ab05d85e404240f09429bdc1"
+          class="img-fluid img-thumbnail float-left randomAlbumArts d-block" alt="random album arts">
+        <img src="https://otakusync.thisistap.com/wp-content/uploads/ALSTROEMERIARECORDSPLASTIKWORLD.jpg"
+          class="img-fluid img-thumbnail float-left randomAlbumArts d-block" alt="random album arts">
+        <img src="https://upload.wikimedia.org/wikipedia/en/c/c2/Silbermond-nichts_passiert_a.jpg"
+          class="img-fluid img-thumbnail float-left randomAlbumArts d-block" alt="random album arts">
+        <img
+          src="https://hosting.photobucket.com/albums/t10/s08333/cd%20evaluation/3a18480cba8b290e40a4a30993fb9827.jpg"
+          class="img-fluid img-thumbnail float-left randomAlbumArts d-block" alt="random album arts">
+        <img src="https://i.scdn.co/image/ab67616d0000b273a2b2aded4b3defaa95c10aae"
+          class="img-fluid img-thumbnail float-left randomAlbumArts d-block" alt="random album arts">
+        <img src="https://i.pinimg.com/736x/6a/36/3e/6a363e864552cbfb7668ef08740d65ff.jpg"
+          class="img-fluid img-thumbnail float-left randomAlbumArts d-block" alt="random album arts">
+        <img src="https://otakusync.thisistap.com/wp-content/uploads/ALSTROEMERIARECORDSPLASTIKWORLD.jpg"
+          class="img-fluid img-thumbnail float-left randomAlbumArts d-block" alt="random album arts">
+        <img
+          src="https://booth.pximg.net/f3395dac-aaa9-42c7-8bbd-2706ac0ba1df/i/1460188/6a500922-f9f6-47f8-9bdd-6d003f5120b6_base_resized.jpg"
+          class="img-fluid img-thumbnail float-left randomAlbumArts d-block" alt="random album arts">
+        <img src="https://i.scdn.co/image/ab67616d0000b2739fd0d700bdf33c9ebc42f429"
+          class="img-fluid img-thumbnail float-left randomAlbumArts d-block" alt="random album arts">
+        <img src="https://i.scdn.co/image/ab67616d0000b273f9bd4e49095927b3ba81b1d9"
+          class="img-fluid img-thumbnail float-left randomAlbumArts d-block" alt="random album arts">
+        <img src="https://tc-animate.techorus-cdn.com/resize_image/resize_image.php?image=03231152_5e78246ea2692.jpg"
+          class="img-fluid img-thumbnail float-left randomAlbumArts d-block" alt="random album arts">
+        <img src="https://i.scdn.co/image/ab67616d0000b273ec5c01145c833cb43355bd4e"
+          class="img-fluid img-thumbnail float-left randomAlbumArts d-block" alt="random album arts">
+        <img src="https://i.scdn.co/image/ab67616d0000b273c8f7c8f061c36721d6fb10e8"
+          class="img-fluid img-thumbnail float-left randomAlbumArts d-block" alt="random album arts">
+        <img src="https://cdn.suruga-ya.jp/database/pics_light/game/186103966.jpg"
+          class="img-fluid img-thumbnail float-left randomAlbumArts d-block" alt="random album arts">
+        <img src="https://i.kfs.io/album/global/18689072,1v1/fit/500x500.jpg"
+          class="img-fluid img-thumbnail float-left randomAlbumArts d-block" alt="random album arts">
+        <img src="https://i.scdn.co/image/ab67616d0000b27346be6d955cd9c389fd7da5b2"
+          class="img-fluid img-thumbnail float-left randomAlbumArts d-block" alt="random album arts">
+        <img src="https://images-na.ssl-images-amazon.com/images/I/61%2BUw-UmEhL._AC_.jpg"
+          class="img-fluid img-thumbnail float-left randomAlbumArts d-block" alt="random album arts">
+      </div>
+    </div>
+  </section>
+  <footer>
+    <script></script>
+  </footer>
   </div>
 </body>
 
