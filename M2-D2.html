@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!--
+ASSIGNMENT RULES
+- The solution must be pushed to the repository and be available for the tutors by the end of the day.
+- You can ask for tutor's help.
+- You can google / use StackOverflow BUT we suggest you to use just the material provided.
+- To test the page, just open it with your default browser.
+- Use Bootstrap4 classes to render the page.
+- Use correctly containers and rows in order to achieve a great display.
+
+ASSIGNMENT TOPIC
+You are creating a website to showcase your favourite music albums.
+In this page you'd like to have a short bio of yourself, the top albums of your life,
+the worst album you ever listen to and everything related to the music you love.
+
+NOTE:
+Most of the times, even the most expert of designers needs inspiration.
+Spend 30 minutes surfing the web and searching for the way of rapresenting album that you like the most.
+Could be the Amazon way, the Spotify or Apple music way or some other blog out there.
+-->
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- IMPORT ALL THE BOOTSTRAP RELATED CSS & SCRIPTS-->
+  <link rel="stylesheet" href="css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <style>
+    /* EXERCISE 1
+            For all Albums we'd like to have a consistent style.
+            Create a class for:
+            - The album container
+            - The album cover
+            - The album title
+            - The album group / singer / dj
+            - The album genre
+            - The album duration
+            - etc
+         */
+    .album-container {}
+
+    .album-cover {}
+
+    .album-title {
+      font-size: 1.25em !important;
+      padding: 16px 4px;
+    }
+
+    .album-group {
+      font-size: 1.2em !important;
+      padding: 8px 4px;
+    }
+
+    .album-genre {
+      padding: 2px 8px;
+      text-align: end;
+      font-style: italic;
+      font-size: 0.8em !important;
+      background: rgba(255, 193, 7, 10%)
+    }
+
+    .album-duration {}
+  </style>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+  </script>
+</head>
+
+<body>
+  <!-- EXERCISE 2
+            Implement a navigation bar using the bootstrap component
+            This navigation bar must be linked to every section in your page
+        -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-light">
+    <a class="navbar-brand" href="#" style="color: #ff2222">Music Library</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" <span
+      class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <!-- <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li> -->
+
+
+        <form class="form-inline form-control-sm">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+          <button class="btn btn-outline-success inline" type="submit">
+            Search
+          </button>
+        </form>
+      </ul>
+
+    </div>
+
+  </nav>
+  <!-- EXERCISE 3
+            Create a responsive section for your favourite albums.
+            In this section you should have:
+            - 4 albums per row when the screen is very large
+            - 3 albums per row when you are on a tablet (or a smaller window)
+            - 2 albums per row when you are on a small screen
+        -->
+
+  <!-- EXERCISE 4
+            Create a section for the album review.
+            Pick one of your fav albums, and create a section with:
+            - Cover
+            - Title
+            - Band
+            - Lenght
+            - Genre
+            - Tracklist
+            - ... And whatever you think it's interesting about it!
+        -->
+
+  <!-- EXERCISE 5
+            Worst album list! Find out the music you don't really like or you find overrated and list it
+            in this "hall of shame" chart!
+        -->
+
+  <!-- EXERCISE 6
+            Do you have any musician / band you admire or you are fan of?
+            This section is dedicated to him / her / them!
+            Feel free to experiment in this part of the page.
+        -->
+
+  <!-- EXERCISE 7
+            Just covers!
+            Create a tapestry of album pictures. Every album picture must be "square" (use CSS to do that).
+            Put at least 20 covers (also repeated) to have a nice effect and see how Bootstrap handles it.
+        -->
+
+  <!-- EXERCISE 8
+            Implement a footer with some information / social links
+        -->
+
+  <!-- EXTRA:
+         EXERCISE 9
+            Create album details that are going to be toggled on and off by clicking on the album image
+        -->
+
+  <!-- EXERCISE 10
+            Add a button to each section. By clicking on it the section body appears (if hidden) or disappears (if visible)
+        -->
+
+  <!--
+            EXERCISE 11
+            Add in the footer a field that counts, on page load, how many ALBUMS are on the page
+        -->
+  <div class="container">
+    <div class="album-conter">
+      <div class="row row-lg">
+        <div class="col col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <img src="https://i.scdn.co/image/ab67616d0000b27380573b550211a163008a377d"
+              class="card-img-top img-fluid img-thumbnail album-cover" alt="Aimer 16th single">
+            <div class="card-header text-center album-title">
+              花の唄／I beg you／春はゆく</div>
+            <div class="card-text text-center album-group">Aimer</div>
+            <div class="card-text text-center album-genre">JPOP
+            </div>
+            <a href="https://open.spotify.com/album/3mWNdupjokTYVrE8TPVV8x" class="btn btn-info"
+              style="margin: 8px 8px;">Listen on Spotify</a>
+          </div>
+        </div>
+
+        <div class="col col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <img src="https://i.scdn.co/image/ab67616d0000b273924ad89f6086e0d722122286"
+              class="img-fluid img-thumbnail album-cover" alt="Gogo penguin first album">
+            <div class="card-header text-center album-title">fanfares</div>
+            <div class="card-text text-center album-group">GoGo Penguin</div>
+            <div class="card-text text-center album-genre">Jazz Fusion, Progressive Jazz</div>
+            <a href="https://open.spotify.com/track/3avXI6fsVgAWCExjiZwW3N" class="btn btn-info"
+              style="margin: 8px 8px;">Listen on Spotify</a>
+          </div>
+        </div>
+
+        <div class="col col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <img
+              src="https://img.discogs.com/qKrPA4ZLOl8o64xsy0txlteGmjA=/fit-in/600x608/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2201083-1269484172.jpeg.jpg"
+              class="card-img-top img-fluid img-thumbnail album-cover" alt="Touhou doujin music">
+            <div class="card-header text-center album-title">Double
+              Counterpoint</div>
+            <div class="card-text text-center album-title">Studio Syrup Comfiture</div>
+            <div class="card-text text-center album-genre">Touhou</div>
+            <a href="https://www.youtube.com/watch?v=VTP_XNpezYc" class="btn btn-info" style="margin: 8px 8px;">Listen
+              on Spotify</a>
+          </div>
+        </div>
+
+        <div class="col col-sm-6 col-md-4 col-lg-3">
+          <div class="card"><img src="https://i.scdn.co/image/ab67616d0000b27330f8e0f777376780c4077507"
+              class=" card-img-top img-fluid img-thumbnail album-cover" alt="Pendulum latest album">
+
+            <div class="card-header text-center album-title">Immersion</div>
+            <div class="card-text text-center album-group">Aimer</div>
+            <div class="card-text text-center album-genre">Drum and Bass</div>
+            <a href="https://open.spotify.com/album/3XtEGVx9uh7J46nBzEc1VS" class="btn btn-info"
+              style="margin: 8px 8px;">Listen on Spotify</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer></footer>
+  </div>
+</body>
+
+</html>
