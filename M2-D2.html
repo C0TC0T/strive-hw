@@ -39,13 +39,21 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
             - The album duration
             - etc
          */
-    .album-container {}
+    .album-container {
+      margin: 0 auto;
+      padding: 2vh 2vw;
+      /* width: 80vw;
+      height: 80vh; */
+    }
 
-    .album-cover {}
+    .album-cover {
+      padding: 0;
+    }
 
     .album-title {
       font-size: 1.25em !important;
       padding: 16px 4px;
+      font-weight: 700;
     }
 
     .album-group {
@@ -54,14 +62,28 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
     }
 
     .album-genre {
-      padding: 2px 8px;
-      text-align: end;
+      padding: 0 10%;
+      align-self: flex center;
       font-style: italic;
-      font-size: 0.8em !important;
-      background: rgba(255, 193, 7, 10%)
+      font-size: 1em !important;
     }
 
-    .album-duration {}
+    .album-tracklist {
+      background: rgba(170, 170, 170, 10%);
+      border: 1px dashed rgba(0, 0, 0, 20%);
+    }
+
+    .card {
+      margin-bottom: 1rem;
+    }
+
+    section {
+      padding: 150px 0;
+    }
+
+    header {
+      /* padding: 156px 0 100px; */
+    }
   </style>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
@@ -79,7 +101,7 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
             Implement a navigation bar using the bootstrap component
             This navigation bar must be linked to every section in your page
         -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-light">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark text-light ">
     <a class="navbar-brand" href="#" style="color: #ff2222">Music Library</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" <span
@@ -87,11 +109,16 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <!-- <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#favAlbums"> Fav Albums <span class="sr-only">(current)</span></a>
+        <li class="nav-item disable">
+          <a class="nav-link" href="#badAlbums"> Hall of Shame <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#bestMusicians"> Best Musicians <span class="sr-only">(current)</span></a>
+        </li>
+        <!--<li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li>
           <li class="nav-item dropdown">
@@ -108,14 +135,12 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
           <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           </li> -->
-
-
-        <form class="form-inline form-control-sm">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+        <!-- <form class="form-inline form-control-sm">
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
           <button class="btn btn-outline-success inline" type="submit">
             Search
           </button>
-        </form>
+        </form> -->
       </ul>
 
     </div>
@@ -175,63 +200,206 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
             EXERCISE 11
             Add in the footer a field that counts, on page load, how many ALBUMS are on the page
         -->
-  <div class="container">
-    <div class="album-conter">
-      <div class="row row-lg">
-        <div class="col col-sm-6 col-md-4 col-lg-3">
-          <div class="card">
-            <img src="https://i.scdn.co/image/ab67616d0000b27380573b550211a163008a377d"
-              class="card-img-top img-fluid img-thumbnail album-cover" alt="Aimer 16th single">
-            <div class="card-header text-center album-title">
-              花の唄／I beg you／春はゆく</div>
-            <div class="card-text text-center album-group">Aimer</div>
-            <div class="card-text text-center album-genre">JPOP
+  <section id="favAlbums">
+    <div class="container">
+      <div class="album-container">
+        <div class="row">
+          <div class="col col-sm-6 col-md-4 col-lg-3">
+            <div class="card">
+              <img src="https://i.scdn.co/image/ab67616d0000b27380573b550211a163008a377d"
+                class="card-img-top img-fluid img-thumbnail album-cover" alt="Aimer 16th single">
+              <div class="card-header text-center album-title">
+                花の唄／I beg you／春はゆく</div>
+              <div class="card-text text-center album-group">Aimer</div>
+              <p class="mx-auto"><a class="btn btn-secondary" data-toggle="collapse" href="#album1" role="button"
+                  aria-expanded="false" aria-controls="album1">Tracklist</a></p>
+              <div class="collapse multi-collapse" id="album1">
+                <ol class="album-tracklist list-group-item">
+                  <li>花の唄</li>
+                  <li>I beg you</li>
+                  <li>春はゆく</li>
+                  <li>花の唄 end of spring ver.</li>
+                  <li>春はゆく the late spring ver.</li>
+                </ol>
+              </div>
+              <div class="album-genre mx-auto">
+                <span class="badge badge-pill badge-warning">JPOP
+                </span>
+              </div> <a href="https://open.spotify.com/album/3mWNdupjokTYVrE8TPVV8x" class="btn btn-info"
+                style="margin: 8px 8px;">Listen on Spotify</a>
             </div>
-            <a href="https://open.spotify.com/album/3mWNdupjokTYVrE8TPVV8x" class="btn btn-info"
-              style="margin: 8px 8px;">Listen on Spotify</a>
           </div>
-        </div>
 
-        <div class="col col-sm-6 col-md-4 col-lg-3">
-          <div class="card">
-            <img src="https://i.scdn.co/image/ab67616d0000b273924ad89f6086e0d722122286"
-              class="img-fluid img-thumbnail album-cover" alt="Gogo penguin first album">
-            <div class="card-header text-center album-title">fanfares</div>
-            <div class="card-text text-center album-group">GoGo Penguin</div>
-            <div class="card-text text-center album-genre">Jazz Fusion, Progressive Jazz</div>
-            <a href="https://open.spotify.com/track/3avXI6fsVgAWCExjiZwW3N" class="btn btn-info"
-              style="margin: 8px 8px;">Listen on Spotify</a>
+          <div class="col col-sm-6 col-md-4 col-lg-3">
+            <div class="card">
+              <img src="https://i.scdn.co/image/ab67616d0000b273924ad89f6086e0d722122286"
+                class="img-fluid img-thumbnail album-cover" alt="Gogo penguin first album">
+              <div class="card-header text-center album-title">fanfares</div>
+              <div class="card-text text-center album-group">GoGo Penguin</div>
+              <p class="mx-auto"><a class="btn btn-secondary" data-toggle="collapse" href="#album2" role="button"
+                  aria-expanded="false" aria-controls="album2">Tracklist</a></p>
+              <div class="collapse multi-collapse" id="album2">
+                <ol class="album-tracklist list-group-item">
+                  <li>Seven Sons of Bjorn</li>
+                  <li>Last Words</li>
+                  <li>Unconditional</li>
+                  <li>FanFares</li>
+                  <li>I am that</li>
+                  <li>Akasthesia</li>
+                  <li>HF</li>
+                </ol>
+              </div>
+              <div class="album-genre mx-auto">
+                <span class="badge badge-pill badge-warning">Jazz Fusion</span>
+                <span class="badge badge-pill badge-warning">Progressive Jazz</span></div>
+              <a href="https://open.spotify.com/track/3avXI6fsVgAWCExjiZwW3N" class="btn btn-info"
+                style="margin: 8px 8px;">Listen on Spotify</a>
+            </div>
           </div>
-        </div>
 
-        <div class="col col-sm-6 col-md-4 col-lg-3">
-          <div class="card">
-            <img
-              src="https://img.discogs.com/qKrPA4ZLOl8o64xsy0txlteGmjA=/fit-in/600x608/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2201083-1269484172.jpeg.jpg"
-              class="card-img-top img-fluid img-thumbnail album-cover" alt="Touhou doujin music">
-            <div class="card-header text-center album-title">Double
-              Counterpoint</div>
-            <div class="card-text text-center album-title">Studio Syrup Comfiture</div>
-            <div class="card-text text-center album-genre">Touhou</div>
-            <a href="https://www.youtube.com/watch?v=VTP_XNpezYc" class="btn btn-info" style="margin: 8px 8px;">Listen
-              on Spotify</a>
+          <div class="col col-sm-6 col-md-4 col-lg-3">
+            <div class="card">
+              <img
+                src="https://img.discogs.com/qKrPA4ZLOl8o64xsy0txlteGmjA=/fit-in/600x608/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2201083-1269484172.jpeg.jpg"
+                class="card-img-top img-fluid img-thumbnail album-cover" alt="Touhou doujin music">
+              <div class="card-header text-center album-title">Double
+                Counterpoint</div>
+              <div class="card-text text-center album-group">Studio Syrup Comfiture</div>
+              <p class="mx-auto"><a class="btn btn-secondary" data-toggle="collapse" href="#album3" role="button"
+                  aria-expanded="false" aria-controls="album3">Tracklist</a></p>
+              <div class="collapse multi-collapse" id="album3">
+                <ol class="album-tracklist list-group-item">
+                  <li>Radio Programs</li>
+                  <li>Against, Perfect Cherry Blossom.</li>
+                  <li>Real Intension</li>
+                  <li>Imperishable Night</li>
+                  <li>Story of the End</li>
+                  <li>Hale inthe 270°</li>
+                  <li>Spritual</li>
+                  <li>Structure Frame</li>
+                  <li>Punishing Fire</li>
+                  <li>Romantic Night</li>
+                  <li>Space Gate</li>
+                  <li>Spring Comes Along</li>
+                  <li>Ripple</li>
+                </ol>
+              </div>
+              <div class="album-genre mx-auto">
+                <span class="badge badge-pill badge-warning">Touhou</span>
+                <span class="badge badge-pill badge-warning">electronic</span>
+              </div>
+              <a href="https://www.youtube.com/watch?v=VTP_XNpezYc" class="btn btn-info" style="margin: 8px 8px;">Listen
+                on Youtube</a>
+            </div>
           </div>
-        </div>
 
-        <div class="col col-sm-6 col-md-4 col-lg-3">
-          <div class="card"><img src="https://i.scdn.co/image/ab67616d0000b27330f8e0f777376780c4077507"
-              class=" card-img-top img-fluid img-thumbnail album-cover" alt="Pendulum latest album">
+          <div class="col col-sm-6 col-md-4 col-lg-3">
+            <div class="card"><img src="https://i.scdn.co/image/ab67616d0000b27330f8e0f777376780c4077507"
+                class=" card-img-top img-fluid img-thumbnail album-cover" alt="Pendulum latest album">
 
-            <div class="card-header text-center album-title">Immersion</div>
-            <div class="card-text text-center album-group">Aimer</div>
-            <div class="card-text text-center album-genre">Drum and Bass</div>
-            <a href="https://open.spotify.com/album/3XtEGVx9uh7J46nBzEc1VS" class="btn btn-info"
-              style="margin: 8px 8px;">Listen on Spotify</a>
+              <div class="card-header text-center album-title">Immersion</div>
+              <div class="card-text text-center album-group">Pendulum</div>
+              <p class="mx-auto"><a class="btn btn-secondary" data-toggle="collapse" href="#album4" role="button"
+                  aria-expanded="false" aria-controls="album4">Tracklist</a></p>
+              <div class="collapse multi-collapse" id="album4">
+                <ol class="album-tracklist list-group-item">
+                  <li>Genesis</li>
+                  <li>Salt In The Wounds</li>
+                  <li>Watercolour</li>
+                  <li>Set me On Fire</li>
+                  <li>Crush</li>
+                  <li>Under The Waves</li>
+                  <li>Immunize</li>
+                  <li>The Island - Pt. I (Dawn)</li>
+                  <li>The Island - Pt. II (Dusk)</li>
+                  <li>Comprachicos</li>
+                  <li>The Vulture</li>
+                  <li>Witchcraft</li>
+                  <li>Self Vs Self</li>
+                  <li>The Fountain</li>
+                  <li>Encoder</li>
+                </ol>
+              </div>
+              <div class="album-genre mx-auto">
+                <span class="badge badge-pill badge-warning">Drum and Bass
+                </span>
+              </div>
+              <a href="https://open.spotify.com/album/3XtEGVx9uh7J46nBzEc1VS" class="btn btn-info"
+                style="margin: 8px 8px;">Listen on Spotify</a>
+            </div>
           </div>
         </div>
       </div>
+  </section>
+
+  <section id="badAlbums">
+    <div class="container">
+      <div class="album-container">
+        <div class="row row-lg">
+          <div class="col col-sm-6 col-md-4 col-lg-3">
+            <div class="card">
+              <img src="https://i.scdn.co/image/ab67616d0000b273da5d5aeeabacacc1263c0f4b"
+                class="card-img-top img-fluid img-thumbnail album-cover" alt="Worst album ever">
+              <div class="card-header text-center album-title">
+                reputation</div>
+              <div class="card-text text-center album-group">
+                Taylor Swift</div>
+              <p class="mx-auto"><a class="btn btn-secondary" data-toggle="collapse" href="#album1" role="button"
+                  aria-expanded="false" aria-controls="album1">Tracklist</a></p>
+              <div class="collapse multi-collapse" id="album1">
+                <ol class="album-tracklist list-group-item">
+                  <li>...Ready For It?</li>
+                  <li>End Game</li>
+                  <li>I Did Something Bad</li>
+                  <li>Don't Blame Me</li>
+                  <li>Delicate</li>
+                  <li>Look What You Made Me Do</li>
+                  <li>So It Goes</li>
+                  <li>Gorgeous</li>
+                  <li>Gateway Car</li>
+                  <li>King Of My Heart</li>
+                  <li>Dancing With Our Hands Tied</li>
+                  <li>Dres</li>
+                  <li>This Is Why We Can't Have Nice Things</li>
+                  <li>Call It What You Want</li>
+                  <li>New Year's Day</li>
+                </ol>
+              </div>
+              <div class="album-genre">
+                <span class="badge badge-pill badge-warning">pop
+                </span>
+                <span class="badge badge-pill badge-warning">country
+                </span>
+              </div> <a href="https://open.spotify.com/album/6DEjYFkNZh67HP7R9PSZvv" class="btn btn-info"
+                style="margin: 8px 8px;">Listen on Spotify</a>
+            </div>
+          </div>
+  </section>
+
+  <section id="#bestMusicians">
+    <div class="container">
+      <img
+        src="https://lastfm.freetls.fastly.net/i/u/770x0/c7c1c6472a51cb4fee3f97ddf3907273.webp#c7c1c6472a51cb4fee3f97ddf3907273"
+        alt="avatar">
+      <p class="text-justify">Miss Ringo is a popular Japanese singer-songwriter who’s gotten some attention in the
+        West.
+        She seems to go for a mix of jazz and pop-inspired elements in her music. This could potentially turn into a
+        mess,
+        but Shiina is very good at her job. She’s a fine pianist (and she can play a bunch of other instruments as well)
+        and a great songwriter – almost every song of hers I’ve heard so far is catchy as hell. For an example, check
+        out <a href="https://www.youtube.com/watch?v=Sy_08-HcR3Y">this song! </a> Shiina Ringo is one of the few
+        singer-songwriter types I care for at all. A lot of the really popular ones seem kind of overrated to me, and
+        some of them are full of themselves or attention-grabbers etc. which can come through in their lyrics
+        sometimes. I have no idea what she’s like – from the little I’ve read, she doesn’t say much about herself and
+        puts on a mysterious persona. And since I can’t understand most of her lyrics, their contents don’t present
+        any problem to me. It might sound weird, but I prefer not to know what she’s singing about. Though it’s
+        possible her lyrics are really profound. I have no idea. If this post seems short, it’s because I have a hard
+        time writing about music. A few writers are really good at it and I’m not among their number. For me, trying
+        to describe music to someone through words is a poor substitute for just playing the music for them, so check
+        out the links above instead if you’re interested.</p>
     </div>
-    <footer></footer>
+  </section>
+  <footer></footer>
   </div>
 </body>
 
