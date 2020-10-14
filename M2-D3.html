@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <style>
+      .item {
+        position: relative;
+        padding-top: 20px;
+        display: inline-block;
+      }
+
+      .notify-badge {
+        position: absolute;
+        right: -20px;
+        top: 10px;
+        background: red;
+        text-align: center;
+        border-radius: 30px 30px 30px 30px;
+        color: white;
+        padding: 5px 10px;
+        font-size: 20px;
+      }
+    </style>
+    <title>Travel Agency</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navigation Section -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"
+          ><svg
+            width="1em"
+            height="1em"
+            viewBox="0 0 16 16"
+            class="bi bi-globe2"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855-.143.268-.276.56-.395.872.705.157 1.472.257 2.282.287V1.077zM4.249 3.539a8.372 8.372 0 0 1-1.198-.49 7.01 7.01 0 0 1 2.276-1.52 6.7 6.7 0 0 0-.597.932 8.854 8.854 0 0 0-.48 1.079zM3.509 7.5H1.017A6.964 6.964 0 0 1 2.38 3.825c.47.258.995.482 1.565.667A13.4 13.4 0 0 0 3.508 7.5zm1.4-2.741c.808.187 1.681.301 2.591.332V7.5H4.51c.035-.987.176-1.914.399-2.741zM8.5 5.09V7.5h2.99a12.342 12.342 0 0 0-.399-2.741c-.808.187-1.681.301-2.591.332zM4.51 8.5H7.5v2.409c-.91.03-1.783.145-2.591.332a12.343 12.343 0 0 1-.4-2.741zm3.99 0v2.409c.91.03 1.783.145 2.591.332.223-.827.364-1.754.4-2.741H8.5zm-3.282 3.696A12.63 12.63 0 0 1 7.5 11.91v3.014c-.67-.204-1.335-.82-1.887-1.855a7.776 7.776 0 0 1-.395-.872zm.11 2.276a6.696 6.696 0 0 1-.598-.933 8.853 8.853 0 0 1-.481-1.079 8.38 8.38 0 0 0-1.198.49 7.01 7.01 0 0 0 2.276 1.522zm-1.383-2.964a9.083 9.083 0 0 0-1.565.667A6.963 6.963 0 0 1 1.018 8.5h2.49a13.36 13.36 0 0 0 .437 3.008zm6.728 2.964a7.009 7.009 0 0 0 2.275-1.521 8.376 8.376 0 0 0-1.197-.49 8.853 8.853 0 0 1-.481 1.078 6.688 6.688 0 0 1-.597.933zM8.5 11.909c.81.03 1.577.13 2.282.287-.12.312-.252.604-.395.872-.552 1.035-1.218 1.65-1.887 1.855V11.91zm3.555-.401c.57.185 1.095.409 1.565.667A6.963 6.963 0 0 0 14.982 8.5h-2.49a13.36 13.36 0 0 1-.437 3.008zM14.982 7.5h-2.49a13.361 13.361 0 0 0-.437-3.008 9.123 9.123 0 0 0 1.565-.667A6.963 6.963 0 0 1 14.982 7.5zM11.27 2.461c.177.334.339.694.482 1.078a8.368 8.368 0 0 0 1.196-.49 7.01 7.01 0 0 0-2.275-1.52c.218.283.418.597.597.932zm-.488 1.343c-.705.157-1.473.257-2.282.287V1.077c.67.204 1.335.82 1.887 1.855.143.268.276.56.395.872z"
+            />
+          </svg>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link disabled"
+                href="#"
+                tabindex="-1"
+                aria-disabled="true"
+                >Disabled</a
+              >
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </nav>
+      <!-- Jumbotron Section -->
+
+      <div class="jumbotron collapse" id="jumbotron">
+        <h1 class="display-4">Hello, world!</h1>
+        <p class="lead">
+          Let us take care of you from the moment you purchuse to your return
+          home!
+        </p>
+        <hr class="my-4" />
+        <p>Plane Tickets | Tours | Eatting & Drinking</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+      </div>
+      <div class="mx-auto text-center">
+        <a
+          class="btn btn-outline-secondary"
+          data-toggle="collapse"
+          data-target="#jumbotron"
+          role="button"
+          aria-expanded="false"
+          aria-controls="jumbotron"
+          >Jumbotron</a
+        >
+        <!-- Deals of the Week Section -->
+        <div class="mx-auto text-center">
+          <a
+            class="btn btn-outline-secondary"
+            data-toggle="collapse"
+            data-target="#dealsOfTheWeek"
+            role="button"
+            aria-expanded="false"
+            aria-controls="dealsOfTheWeek"
+            >Deals of the Week</a
+          >
+        </div>
+        <div class="row collapse" id="dealsOfTheWeek">
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card destination">
+              <img
+                src="https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg"
+                class="card-img-top"
+                alt=""
+              />
+              <div class="card-body">
+                <h5 class="card-title">London</h5>
+                <p class="card-text">from £159pp</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Big Ben</li>
+                <li class="list-group-item">Meet the Queen</li>
+                <li class="list-group-item">Afternoon Tea</li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="card-link">Grab ticket!</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card destination">
+              <img
+                src="https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg"
+                class="card-img-top"
+                alt=""
+              />
+              <div class="card-body">
+                <h5 class="card-title">Paris</h5>
+                <p class="card-text">from £59pp</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">City of Lights</li>
+                <li class="list-group-item">Eiffle Tower Tours</li>
+                <li class="list-group-item">River Seine</li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="card-link">Grab ticket!</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card destination">
+              <img
+                src="https://images.pexels.com/photos/1124460/pexels-photo-1124460.jpeg"
+                class="card-img-top"
+                alt=""
+              />
+              <div class="card-body">
+                <h5 class="card-title">Frankfurt</h5>
+                <p class="card-text">from £99pp</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Prezels & Sausages</li>
+                <li class="list-group-item">A lot of Beer</li>
+                <li class="list-group-item">Altstadt (Old Town)</li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="card-link">Grab ticket!</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card destination">
+              <img
+                src="https://images.pexels.com/photos/1414467/pexels-photo-1414467.jpeg"
+                class="card-img-top"
+                alt=""
+              />
+              <div class="card-body">
+                <h5 class="card-title">Amsterdamn</h5>
+                <p class="card-text">from £39pp</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Cheese & Weed</li>
+                <li class="list-group-item">Bike Tours</li>
+                <li class="list-group-item">Red Light District</li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="card-link">Grab ticket!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Welcome Summer Section -->
+        <div class="mx-auto text-center">
+          <a
+            class="btn btn-outline-secondary"
+            data-toggle="collapse"
+            data-target="#welcomeSummerSection"
+            role="button"
+            aria-expanded="false"
+            aria-controls="welcomeSummerSection"
+            >Welcome Summer Section</a
+          >
+        </div>
+        <div
+          class="container shadow-lg p-3 mb-5 bg-white rounded collapse"
+          id="welcomeSummerSection"
+        >
+          <div class="row">
+            <div class="col-6 col-md-4 col-lg-2 destination">
+              <img
+                class="img-fluid"
+                src="https://images.pexels.com/photos/2159549/pexels-photo-2159549.jpeg"
+                alt="Summer-in-istanbul"
+              />
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 destination">
+              <img
+                class="img-fluid"
+                src="https://images.pexels.com/photos/161850/venice-grand-canal-water-boats-161850.jpeg"
+                alt="venice-grand-canal-water-boats"
+              />
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 destination">
+              <img
+                class="img-fluid"
+                src="https://images.pexels.com/photos/2842117/pexels-photo-2842117.jpeg"
+                alt="Summer-in-Moscow"
+              />
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 destination">
+              <img
+                class="img-fluid"
+                src="https://images.pexels.com/photos/126292/pexels-photo-126292.jpeg"
+                alt="Summer-in-Prague"
+              />
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 destination">
+              <img
+                class="img-fluid"
+                src="https://images.pexels.com/photos/1486222/pexels-photo-1486222.jpeg"
+                alt="Summer-in-NYC"
+              />
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 destination">
+              <img
+                class="img-fluid"
+                src="https://images.pexels.com/photos/1414467/pexels-photo-1414467.jpeg"
+                alt="Summer-in-Amste"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- Deal of the Day -->
+        <div class="mx-auto text-center">
+          <a
+            class="btn btn-outline-secondary"
+            data-toggle="collapse"
+            data-target="#dealOfTheDay"
+            role="button"
+            aria-expanded="false"
+            aria-controls="dealOfTheDay"
+            >Deal of the Day</a
+          >
+        </div>
+        <div id="dealOfTheDay" class="collapse">
+          <div class="container d-none d-md-block">
+            <div class="row">
+              <div class="col-8 destination">
+                <img
+                  src="https://images.pexels.com/photos/3757144/pexels-photo-3757144.jpeg"
+                  alt="Downtown-Madrid"
+                  width="100%"
+                />
+              </div>
+              <div class="col-4">
+                <ul class="list-group list-group-flush">
+                  <h5 class="card-title">Visit Madrid</h5>
+                  <p class="card-text">9 Days, only £300pp</p>
+                  <li class="list-group-item">Hotel & guide included</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Last Minute Section -->
+      <div class="mx-auto text-center">
+        <a
+          class="btn btn-outline-secondary"
+          data-toggle="collapse"
+          data-target="#lastMinuteSection"
+          role="button"
+          aria-expanded="false"
+          aria-controls="lastMinuteSection"
+          >Last Minute Section</a
+        >
+      </div>
+      <div class="container">
+        <div id="lastMinuteSection" class="collapse">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="card destination">
+                <img
+                  src="https://images.pexels.com/photos/3757144/pexels-photo-3757144.jpeg"
+                  class="card-img-top"
+                  alt="Downtown-Madrid"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Spead the weekend in Madrid!</h5>
+                  <p class="card-text">Only £35pp</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card destination">
+                <img
+                  src="https://images.pexels.com/photos/2159549/pexels-photo-2159549.jpeg"
+                  class="card-img-top destination"
+                  alt="Summer-in-istanbul"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Wake up tomorrow in Istanbul</h5>
+                  <p class="card-text">Only £35pp</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial Section -->
+      <div class="mx-auto text-center">
+        <a
+          class="btn btn-outline-secondary"
+          data-toggle="collapse"
+          data-target="#carouselExampleCaptions"
+          role="button"
+          aria-expanded="false"
+          aria-controls="carouselExampleCaptions"
+          >Testimonial Section</a
+        >
+      </div>
+      <div class="container">
+        <div
+          id="carouselExampleCaptions"
+          class="carousel slide collapse"
+          data-ride="carousel"
+        >
+          <ol class="carousel-indicators">
+            <li
+              data-target="#carouselExampleCaptions"
+              data-slide-to="0"
+              class="active"
+            ></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="https://images.pexels.com/photos/1486222/pexels-photo-1486222.jpeg"
+                class="d-block w-100 destination"
+                alt="Summer-in-NYC"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Time of my life!</h5>
+                <p>- Stephanie, who traveled to NYC</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://images.pexels.com/photos/2159549/pexels-photo-2159549.jpeg"
+                class="d-block w-100 destination"
+                alt="Summer-in-istanbul"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>I can't wait to go back!</h5>
+                <p>- Matson, loving Istanbul</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://images.pexels.com/photos/3757144/pexels-photo-3757144.jpeg"
+                class="d-block w-100 destination"
+                alt="Downtown-Madrid"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>It was the easiest trip I have ever taken</h5>
+                <p>- Elliot, first time traveller</p>
+              </div>
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#carouselExampleCaptions"
+            role="button"
+            data-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carouselExampleCaptions"
+            role="button"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        <!-- <div class="card">
+        <div class="card-header">
+          Quote
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+          </blockquote>
+        </div>
+      </div> -->
+      </div>
+      <!-- Counting "travel" -->
+
+      <div class="container">
+        <p class="text-center text-secondary">
+          <script>
+            function travelImgNbr() {
+              let travelImage = document.getElementsByClassName("destination")
+                .length;
+              document.write(
+                "There are " + travelImage + " travel imgages on this page."
+              );
+            }
+            console.log(travelImgNbr());
+          </script>
+        </p>
+      </div>
+      <!-- Footer -->
+      <div class="container justify-content-center d-flex">
+        <p class="text-center">
+          Company Info
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#exampleModal"
+          >
+            Contact Us
+          </button>
+        </p>
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  Questions? Email us
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <!-- Input field for Modal -->
+
+                <div class="input-group mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Recipient's username"
+                    aria-label="Recipient's username"
+                    aria-describedby="basic-addon2"
+                  />
+                  <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2"
+                      >@example.com</span
+                    >
+                  </div>
+                </div>
+                <div class="input-group">
+                  <textarea
+                    class="form-control"
+                    aria-label="With textarea"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" class="btn btn-primary">
+                  Save changes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <span class="input-group-text" id="basic-addon2">@example.com</span>
+            </div>
+          </div> -->
+      </div>
+      <!-- Div for closing containter -->
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>
+      const delAll = function () {
+        document.body.style.display = "none";
+      };
+    </script>
+    <script>
+      const hot = function () {
+        let place = document.getElementsByClassName("destination");
+        let hot = document.createElement("span");
+        hot.innerText = "HOT";
+        hot.className = "notify-badge";
+        place[1].parentElement.append(hot);
+        place[2].parentElement.append(hot);
+        place[3].parentElement.append(hot);
+      };
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
