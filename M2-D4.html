@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--
+    WELCOME TO THE STRIVE TEAM GENERATOR!
+
+    The app is pretty straight forward, use Bootstrap to add the following features:
+    - The user can add a list of names
+    - The user can set the number of teams
+    - Every time the user clicks on the "assign" button, a random name is placed in a team and removed from the list
+    - Each team should be inside a "column"
+    - [EXTRA] Create a button to remove an user from a team, putting him back in the main list
+    - [EXTRA] Create a button to reset the state of the app
+-->
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      section {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="input">
+      <div class="contianer">
+        <div class="input-group mb-2">
+          <textarea
+            class="form-control"
+            aria-label="With textarea"
+            placeholder="Paste any names here"
+            id="namesInput"
+          >
+          </textarea>
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            id="button-addon1"
+            onclick="assign()"
+          >
+            Assign
+          </button>
+        </div>
+        <div class="input-group mb-2">
+          <input
+            type="number"
+            class="form-control"
+            min="0"
+            max="10"
+            id="teamsNbr"
+            placeholder="0"
+          />
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            id="button-addon3"
+            onclick="addTeams()"
+          >
+            Generate teams
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="cards">
+      <div class="contianer">
+        <div class="row" id="cardsStorage"></div>
+      </div>
+    </section>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function assign() {
+        let usernames = document.getElementById("namesInput").value;
+        let arr = [];
+        arr = usernames.split(" ");
+        let existTeamNbr = document.getElementsByClassName("card-body").length;
+        let list = document.getElementsByClassName("list-group");
+        // remove old entries
+        if (document.getElementsByClassName("list-group-item").length > 0) {
+          for (let i = 0; i < existTeamNbr; i++) {
+            for (let j = 0; j < list[i].childElementCount; i++) {
+              list[i].removeChild(list[i].lastChild);
+            }
+          }
+        }
+        // Add remove button
+        function rmBtn() {}
+        // Assign names randomly
+        for (let i = 0; i < arr.length; i++) {
+          let entry = document.createElement("li");
+          entry.className = "list-group-item";
+          entry.innerText = arr[i];
+          let randomTeam = Math.floor(Math.random() * existTeamNbr);
+          list[randomTeam].appendChild(entry);
+        }
+      }
+      function addTeams() {
+        let teamNbr = document.getElementById("teamsNbr").value;
+        let cards = document.getElementById("cardsStorage");
+        // Remove old entries
+        if (document.getElementsByClassName("card-title").length > 0) {
+          let existTeamNbr = document.getElementsByClassName("card-body")
+            .length;
+          document.getElementById("cardsStorage").innerText = "";
+        }
+        // Generate Teams
+        for (let i = 0; i < teamNbr; i++) {
+          let newCard = document.createElement("div");
+          newCard.className = "card";
+          let insideNewCard = document.createElement("div");
+          insideNewCard.className = "card-body";
+          let newList = document.createElement("div");
+          newList.className = "list-group";
+          let header = document.createElement("div");
+          header.className = "card-title";
+          header.innerText = "Team" + (i + 1);
+          insideNewCard.append(header);
+          insideNewCard.append(newList);
+
+          newCard.append(insideNewCard);
+          cards.append(newCard);
+        }
+      }
+    </script>
+  </body>
+</html>
