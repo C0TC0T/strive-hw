@@ -536,6 +536,22 @@
         }
       }
       changePostColSize();
+
+      function rmElsewhereLinks() {
+        document
+          .getElementsByClassName("blog-sidebar")[0]
+          .lastElementChild.lastElementChild.remove();
+      }
+      rmElsewhereLinks();
+
+      function trimPost() {
+        let post = document.getElementsByClassName("blog-post");
+        for (let i = 0; i < post.length; i++) {
+          let str = post[i].childNodes[5].innerText.substring(50);
+          post[i].childNodes[5].innerText = str;
+        }
+      }
+      trimPost();
     </script>
   </body>
 </html>
