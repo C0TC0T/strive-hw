@@ -552,6 +552,34 @@
         }
       }
       trimPost();
+
+      document
+        .getElementsByClassName("btn-outline-secondary")[1]
+        .classList.remove("disabled");
+      document
+        .getElementsByClassName("btn-outline-secondary")[1]
+        .addEventListener("click", function (e) {
+          let main = document.getElementsByClassName("blog-main")[0];
+          // let blogNav = document.getElementsByClassName("blog-pagination")[0];
+          let firstPost = document.getElementsByClassName("blog-post")[0];
+          let newPost = document.createElement("div");
+          newPost.className = "blog-post";
+          newPost.innerText = "New Post Text";
+          // main.prepend(newPost);
+          main.insertBefore(newPost, firstPost);
+        });
+
+      document
+        .getElementsByClassName("btn-outline-primary")[0]
+        .addEventListener("click", function (e) {
+          let main = document.getElementsByClassName("blog-main")[0];
+          let blogNav = document.getElementsByClassName("blog-pagination")[0];
+          // let firstPost = document.getElementsByClassName("blog-post")[0];
+          let newPost = document.createElement("div");
+          newPost.className = "blog-post";
+          newPost.innerText = "New Post Text";
+          main.insertBefore(newPost, blogNav);
+        });
     </script>
   </body>
 </html>
