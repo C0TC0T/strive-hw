@@ -36,12 +36,40 @@
         background-color: tomato;
       }
 
-      div.jumbotron p:last-child a {
+      .jumbotron p:last-child a {
         background-color: tomato;
       }
 
-      div.row > div.col-md-6:first-of-type {
+      /* div.row > div.col-md-6:first-of-type {
         border: 2px solid black;
+      } */
+
+      .blog-post:first-of-type {
+        background-color: yellowgreen;
+      }
+
+      .nav a:nth-child(even) {
+        background-color: teal;
+      }
+
+      .blog-post:last-of-type {
+        background-color: tomato;
+      }
+
+      .blog-sidebar > div:nth-of-type(2) li {
+        text-align: end;
+      }
+
+      .blog-post:nth-of-type(2) .blog-post-meta > a {
+        color: tomato;
+      }
+
+      .container:last-child p:last-of-type a {
+        background-color: tomato;
+      }
+
+      main.container ~ * {
+        border: 4px solid black;
       }
     </style>
     <meta charset="utf-8" />
