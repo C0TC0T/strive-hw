@@ -564,7 +564,11 @@
           let firstPost = document.getElementsByClassName("blog-post")[0];
           let newPost = document.createElement("div");
           newPost.className = "blog-post";
-          newPost.innerText = "New Post Text";
+          let newTitle = document.createElement("h2");
+          newPost.className = "blog-post";
+          newTitle.className = "blog-post-title";
+          newTitle.innerText = "New Post Text";
+          newPost.appendChild(newTitle);
           // main.prepend(newPost);
           main.insertBefore(newPost, firstPost);
         });
@@ -576,8 +580,11 @@
           let blogNav = document.getElementsByClassName("blog-pagination")[0];
           // let firstPost = document.getElementsByClassName("blog-post")[0];
           let newPost = document.createElement("div");
+          let newTitle = document.createElement("h2");
           newPost.className = "blog-post";
-          newPost.innerText = "New Post Text";
+          newTitle.className = "blog-post-title";
+          newTitle.innerText = "New Post Text";
+          newPost.appendChild(newTitle);
           main.insertBefore(newPost, blogNav);
         });
 
