@@ -580,6 +580,16 @@
           newPost.innerText = "New Post Text";
           main.insertBefore(newPost, blogNav);
         });
+
+      function hoverAuthor() {
+        let meta = document.getElementsByClassName("blog-post-meta");
+        for (let i = 0; i < meta.length; i++) {
+          meta[i].lastElementChild.addEventListener("mouseover", function (e) {
+            alert(meta[i].lastElementChild.innerText);
+          });
+        }
+      }
+      hoverAuthor();
     </script>
   </body>
 </html>
