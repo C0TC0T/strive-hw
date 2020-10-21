@@ -1,0 +1,145 @@
+h2 {
+  font-size: 3rem;
+  font-weight: 300;
+}
+p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+.h5 {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+li {
+  list-style: none;
+}
+section {
+  margin-top: 1rem;
+}
+.jumbotron {
+  border: 2px solid black;
+  border-radius: 40px;
+  padding: 0;
+  overflow: hidden;
+  height: 400px;
+  font-size: 0.9rem;
+}
+
+.jumbotron .col.col-md-6 {
+  background: #6bb56b;
+  margin: 0;
+
+  color: white;
+}
+
+.jumbotron ul {
+  margin-left: -40px;
+}
+
+.jumbotron .col.col-md-2 {
+  background: #299bff;
+  margin: 0;
+  color: white;
+  font-weight: bold;
+  border-left: 2px solid black;
+}
+.jumbotron .col.col-md-4 {
+  background: tomato;
+  margin: 0;
+  padding: 0;
+}
+.jumbotron .col.col-md-4 > .col:first-of-type {
+  background-color: #fff7bd;
+  font-size: 0.9rem;
+}
+.jumbotron .col.col-md-4 > .col:nth-of-type(2) {
+  background-color: #ffed69;
+}
+
+.jumbotron .col.col-md-4 > .col:last-of-type {
+  background-color: #ffe41f;
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: 30%;
+  }
+}
+.card-header {
+  font-size: 1.4rem;
+}
+.card-body .price {
+  font-weight: 600;
+  font-size: 2rem;
+}
+.card-body .period {
+  color: #444;
+  font-weight: normal;
+}
+.card-body li {
+  list-style: none;
+  text-align: center;
+}
+.card-body ul {
+  margin-left: -40px;
+}
+.card > button {
+  margin: 16px;
+}
+
+.card-img-top {
+  min-width: 250px;
+  min-height: 200px;
+  background-color: grey;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.thumb-text {
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
+.label-btn-text {
+  padding: 4px 8px;
+  font-size: 0.8rem;
+}
+.thumb-left {
+  justify-content: flex-start;
+}
+.thumb-right {
+  justify-content: flex-end;
+}
+
+.blog-sidebar .card-header {
+  font-size: 1rem;
+}
+
+.post,
+.blog-sidebar-item {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 16px;
+}
+
+.card-footer {
+  justify-content: start;
+  display: flex;
+  color: grey;
+}
+
+.blog-sidebar-header {
+  font-weight: bold;
+  color: black;
+  padding: 8px;
+  margin: 0px;
+  background-color: #ccc;
+}
+
+.blog-sidebar-item {
+  padding: 0;
+}
