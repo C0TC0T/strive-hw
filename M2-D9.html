@@ -109,6 +109,13 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
         min-height: 55vh;
       }
 
+      .rmBtn {
+        z-index: 2;
+        width: 1rem;
+        display: inline-block;
+        position: relative;
+        top: 0;
+      }
     </style>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -349,7 +356,7 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
                     <li>春はゆく the late spring ver.</li>
                   </ol>
                 </div> -->
-                <div class="collapse tracklist" id="album1">
+                <!-- <div class="collapse tracklist" id="album1">
                   <div class="row row-cols-3">
                     <div class="col-1 mx-0">
                       <ol class="album-tracklist-nbr list-group-item mx-0 pr-2">
@@ -383,6 +390,47 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
                         <li>05:33</li>
                         <li>05:33</li>
                       </ul>
+                    </div>
+                  </div>
+                </div> -->
+                <div class="collapse tracklist" id="album1">
+                  <div class="col">
+                    <div class="row justify-content-between album-tracklist">
+                      <div class="album-tracklist-nbr col-1">1</div>
+                      <div class="album-tracklist-title text-truncate">
+                        花の唄
+                      </div>
+                      <div class="album-tracklist-length">06:11</div>
+                    </div>
+                    <div class="row justify-content-between album-tracklist">
+                      <div class="album-tracklist-nbr">2</div>
+                      <div class="album-tracklist-title text-truncate">
+                        I beg you
+                      </div>
+                      <div class="album-tracklist-length">04:28</div>
+                    </div>
+                    <div class="row justify-content-between album-tracklist">
+                      <div class="album-tracklist-nbr">3</div>
+                      <div class="album-tracklist-title text-truncate">
+                        春はゆく
+                      </div>
+                      <div class="album-tracklist-length">05:06</div>
+                    </div>
+                    <div class="row justify-content-between album-tracklist">
+                      <div class="album-tracklist-nbr">4</div>
+                      <div
+                        class="album-tracklist-title d-flex text-truncate w-50"
+                      >
+                        <span> 花の唄 end of spring ver.</span>
+                      </div>
+                      <div class="album-tracklist-length">05:33</div>
+                    </div>
+                    <div class="row justify-content-between album-tracklist">
+                      <div class="album-tracklist-nbr">5</div>
+                      <div class="album-tracklist-title w-50 text-truncate">
+                        花の唄 the late spring ver.
+                      </div>
+                      <div class="album-tracklist-length">05:33</div>
                     </div>
                   </div>
                 </div>
@@ -909,7 +957,7 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
 
         <div class="row justify-content-between">
           <div class="my-5 mx-auto col col-md-3">
-            <h4><a href="#">Home</a></h5>
+            <h5><a href="#">Home</a></h5>
             <p>
               <a href="#favAlbums">Favourite Albums</a><br />
               <a href="#badAlbums">Hall of Shame</a><br />
@@ -941,5 +989,18 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
         </div>
       </div>
     </footer>
+    <script>
+      const rmTrack = function () {
+        let nbr = document.querySelectorAll(".album-tracklist-nbr li");
+        let btn = document.createElement("div");
+        btn.innerHTML = btn.setAttribute("z-index", "3");
+        btn.className = "rmBtn";
+        btn.setAttribute = ("opacity", "0.5");
+        for (let i = 0; i < nbr.length; i++) {
+          nbr[i].append(btn);
+        }
+      };
+      rmTrack();
+    </script>
   </body>
 </html>
