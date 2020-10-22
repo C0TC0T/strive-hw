@@ -20,99 +20,153 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
 -->
 
 <html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- IMPORT ALL THE BOOTSTRAP RELATED CSS & SCRIPTS-->
-  <link rel="stylesheet" href="css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-  <style>
-    .album-container {
-      margin: 0 auto;
-      padding: 2vh 2vw;
-      /* width: 80vw;
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- IMPORT ALL THE BOOTSTRAP RELATED CSS & SCRIPTS-->
+    <link
+      rel="stylesheet"
+      href="css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <style>
+      .album-container {
+        margin: 0 auto;
+        padding: 2vh 2vw;
+        /* width: 80vw;
       height: 80vh; */
-    }
+      }
 
-    .album-cover {
-      padding: 0;
-    }
+      .album-cover {
+        padding: 0;
+      }
 
-    .album-title {
-      font-size: 1.25em !important;
-      padding: 16px 4px;
-      font-weight: 700;
-    }
+      .album-title {
+        font-size: 1.25em !important;
+        padding: 16px 4px;
+        font-weight: 700;
+      }
 
-    .album-group {
-      font-size: 1.2em !important;
-      padding: 8px 4px;
-    }
+      .album-group {
+        font-size: 1.2em !important;
+        padding: 8px 4px;
+      }
 
-    .album-genre {
-      padding: 0 10%;
-      align-self: flex center;
-      font-style: italic;
-      font-size: 1em !important;
-    }
+      .album-genre {
+        padding: 0 10%;
+        align-self: flex center;
+        font-style: italic;
+        font-size: 1em !important;
+      }
 
-    .album-tracklist {
-      background: rgba(170, 170, 170, 10%);
-      border: 1px dashed rgba(0, 0, 0, 20%);
-    }
+      .album-tracklist,
+      .album-tracklist-nbr,
+      .album-tracklist-title,
+      .album-tracklist-length {
+        background: #f0f0f0;
+        border: 0;
+      }
 
-    .card {
-      margin-bottom: 1rem;
-    }
+      .card {
+        margin-bottom: 1rem;
+      }
 
-    section {
-      padding: 150px 0;
-    }
+      section {
+        padding: 150px 0;
+      }
 
-    img.randomAlbumArt {
-      border: 4px solid black;
-      padding: 0;
-      margin: -2px;
-    }
+      img.randomAlbumArt {
+        border: 4px solid black;
+        padding: 0;
+        margin: -2px;
+      }
 
-    #albumArts .btn {
-      margin: 20px auto;
-    }
-  </style>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-  </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
-  </script>
-</head>
+      #albumArts .btn {
+        margin: 20px auto;
+      }
 
-<body>
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark text-light ">
-    <a class="navbar-brand" href="#" style="color: #ff2222">Music Library</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" <span
-      class="navbar-toggler-icon"></span>
-    </button>
+      .breadcrumb-item + .breadcrumb-item::before {
+        color: #ccc;
+        content: "≫";
+        padding: 0 8px 0 4px;
+      }
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#favAlbums"> Fav Albums <span class="sr-only">(current)</span></a>
-        <li class="nav-item disable">
-          <a class="nav-link" href="#badAlbums"> Hall of Shame <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#bestMusicians"> Best Musicians <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#albumArts"> Other Albums <span class="sr-only">(current)</span></a>
-        </li>
-        <!--<li class="nav-item">
+      .breadcrumb-item + li:not(a)::after {
+        color: #aaa;
+        content: "♪";
+        padding: 0 8px 0 4px;
+      }
+      .jumbotron {
+        color: #fff;
+        background-image: url(https://panora.tokyo/wp-content/uploads/2019/10/nijisanjimf-5649.jpg);
+        background-size: contain;
+        background-position: center;
+        background-attachment: fixed;
+        min-height: 55vh;
+      }
+    </style>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <nav
+      class="navbar fixed-top navbar-expand-md navbar-dark bg-dark text-light"
+    >
+      <a class="navbar-brand" href="#" style="color: #ff2222">Music Library</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#favAlbums">
+              Fav Albums <span class="sr-only">(current)</span></a
+            >
+          </li>
+
+          <li class="nav-item disable">
+            <a class="nav-link" href="#badAlbums">
+              Hall of Shame <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#bestMusicians">
+              Best Musicians <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#albumArts">
+              Other Albums <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <!--<li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li>
           <li class="nav-item dropdown">
@@ -129,17 +183,15 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
           <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           </li> -->
-        <!-- <form class="form-inline form-control-sm">
+          <!-- <form class="form-inline form-control-sm">
           <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
           <button class="btn btn-outline-success inline" type="submit">
             Search
           </button>
         </form> -->
-      </ul>
-
-    </div>
-
-  </nav>
+        </ul>
+      </div>
+    </nav>
     <!-- EXERCISE 1
         Use the specific bootstrap component to implement a Breadcrumb
         -->
@@ -160,8 +212,8 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
     <!-- EXERCISE 5
             Place the tracklist inside a Bootstrap table.
             The row column must be alternate.
-            Use one column for the track order, one of the title and one for the length.
-            (If you want, you can also add extra columns)
+            Use .
+            (If you want, you can also add extra colone column for the track order, one of the title and one for the lengthumns)
         -->
 
     <!-- EXERCISE 6
@@ -232,330 +284,649 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
     <!-- EXERCISE 16
             Make every section of the page "collapsable" if the user clicks on the section title
         -->
-  <section id="favAlbums">
-    <div class="container">
-      <div class="album-container">
-        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 collapse show" id="favs">
-          <div class="col">
-            <div class="card">
-              <img src="https://i.scdn.co/image/ab67616d0000b27380573b550211a163008a377d"
-                class="card-img-top img-fluid img-thumbnail album-cover" alt="Aimer 16th single">
-              <div class="card-header text-center album-title">
-                花の唄／I beg you／春はゆく</div>
-              <div class="card-text text-center album-group">Aimer</div>
-              <p class="mx-auto"><a class="btn btn-outline-primary" data-toggle="collapse" href="#album1" role="button"
-                  aria-expanded="false" aria-controls="album1">Tracklist</a></p>
-              <div class="collapse multi-collapse" id="album1">
-                <ol class="album-tracklist list-group-item">
-                  <li>花の唄</li>
-                  <li>I beg you</li>
-                  <li>春はゆく</li>
-                  <li>花の唄 end of spring ver.</li>
-                  <li>春はゆく the late spring ver.</li>
-                </ol>
-              </div>
-              <div class="album-genre mx-auto">
-                <span class="badge badge-pill badge-warning">JPOP
-                </span>
-                <span class="badge badge-pill badge-warning">Anime
-                </span>
-              </div> <a href="https://open.spotify.com/album/3mWNdupjokTYVrE8TPVV8x" class="btn btn-info"
-                style="margin: 8px 8px;">Listen on Spotify</a>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card">
-              <img src="https://i.scdn.co/image/ab67616d0000b273924ad89f6086e0d722122286"
-                class="img-fluid img-thumbnail album-cover" alt="Gogo penguin first album">
-              <div class="card-header text-center album-title">fanfares</div>
-              <div class="card-text text-center album-group">GoGo Penguin</div>
-              <p class="mx-auto"><a class="btn btn-outline-primary" data-toggle="collapse" href="#album2" role="button"
-                  aria-expanded="false" aria-controls="album2">Tracklist</a></p>
-              <div class="collapse multi-collapse" id="album2">
-                <ol class="album-tracklist list-group-item">
-                  <li>Seven Sons of Bjorn</li>
-                  <li>Last Words</li>
-                  <li>Unconditional</li>
-                  <li>FanFares</li>
-                  <li>I am that</li>
-                  <li>Akasthesia</li>
-                  <li>HF</li>
-                </ol>
-              </div>
-              <div class="album-genre mx-auto">
-                <span class="badge badge-pill badge-warning">Jazz Fusion</span>
-                <span class="badge badge-pill badge-warning">Progressive Jazz</span></div>
-              <a href="https://open.spotify.com/track/3avXI6fsVgAWCExjiZwW3N" class="btn btn-info"
-                style="margin: 8px 8px;">Listen on Spotify</a>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card">
-              <img
-                src="https://img.discogs.com/qKrPA4ZLOl8o64xsy0txlteGmjA=/fit-in/600x608/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2201083-1269484172.jpeg.jpg"
-                class="card-img-top img-fluid img-thumbnail album-cover" alt="Touhou doujin music">
-              <div class="card-header text-center album-title">Double
-                Counterpoint</div>
-              <div class="card-text text-center album-group">Studio Syrup Comfiture</div>
-              <p class="mx-auto"><a class="btn btn-outline-primary" data-toggle="collapse" href="#album3" role="button"
-                  aria-expanded="false" aria-controls="album3">Tracklist</a></p>
-              <div class="collapse multi-collapse" id="album3">
-                <ol class="album-tracklist list-group-item">
-                  <li>Radio Programs</li>
-                  <li>Against, Perfect Cherry Blossom.</li>
-                  <li>Real Intension</li>
-                  <li>Imperishable Night</li>
-                  <li>Story of the End</li>
-                  <li>Hale inthe 270°</li>
-                  <li>Spritual</li>
-                  <li>Structure Frame</li>
-                  <li>Punishing Fire</li>
-                  <li>Romantic Night</li>
-                  <li>Space Gate</li>
-                  <li>Spring Comes Along</li>
-                  <li>Ripple</li>
-                </ol>
-              </div>
-              <div class="album-genre mx-auto">
-                <span class="badge badge-pill badge-warning">Touhou</span>
-                <span class="badge badge-pill badge-warning">electronic</span>
-              </div>
-              <a href="https://www.youtube.com/watch?v=VTP_XNpezYc" class="btn btn-info" style="margin: 8px 8px;">Listen
-                on Youtube</a>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card"><img src="https://i.scdn.co/image/ab67616d0000b27330f8e0f777376780c4077507"
-                class=" card-img-top img-fluid img-thumbnail album-cover" alt="Pendulum latest album">
-
-              <div class="card-header text-center album-title">Immersion</div>
-              <div class="card-text text-center album-group">Pendulum</div>
-              <p class="mx-auto"><a class="btn btn-outline-primary" data-toggle="collapse" href="#album4" role="button"
-                  aria-expanded="false" aria-controls="album4">Tracklist</a></p>
-              <div class="collapse multi-collapse" id="album4">
-                <ol class="album-tracklist list-group-item">
-                  <li>Genesis</li>
-                  <li>Salt In The Wounds</li>
-                  <li>Watercolour</li>
-                  <li>Set me On Fire</li>
-                  <li>Crush</li>
-                  <li>Under The Waves</li>
-                  <li>Immunize</li>
-                  <li>The Island - Pt. I (Dawn)</li>
-                  <li>The Island - Pt. II (Dusk)</li>
-                  <li>Comprachicos</li>
-                  <li>The Vulture</li>
-                  <li>Witchcraft</li>
-                  <li>Self Vs Self</li>
-                  <li>The Fountain</li>
-                  <li>Encoder</li>
-                </ol>
-              </div>
-              <div class="album-genre mx-auto">
-                <span class="badge badge-pill badge-warning">Drum and Bass
-                </span>
-              </div>
-              <a href="https://open.spotify.com/album/3XtEGVx9uh7J46nBzEc1VS" class="btn btn-info"
-                style="margin: 8px 8px;">Listen on Spotify</a>
-            </div>
-          </div>
-        </div>
+    <section class="container">
+      <div class="jumbotron">
+        <h1 class="display-4">Hello, world!</h1>
+        <p class="lead">This is my music library!</p>
+        <!-- <hr class="my-4" />
+        <p>
+          It uses utility classes for typography and spacing to space content
+          out within the larger container.
+        </p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#" role="button"
+            >Learn more</a
+          >
+        </p> -->
       </div>
-      <div class="mx-auto text-center">
-        <a class="btn btn-outline-secondary" data-toggle="collapse" data-target="#favs" role="button"
-          aria-expanded="false" aria-controls="favs">Toggle albums</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="badAlbums">
-    <div class="container">
-      <div class="album-container">
-        <div class="row" id="badList">
-          <div class="col col-sm-6 col-md-4 col-lg-3">
-            <div class="card">
-              <img src="https://i.scdn.co/image/ab67616d0000b273da5d5aeeabacacc1263c0f4b"
-                class="card-img-top img-fluid img-thumbnail album-cover" alt="Worst album ever">
-              <div class="card-header text-center album-title">
-                reputation</div>
-              <div class="card-text text-center album-group">
-                Taylor Swift</div>
-              <p class="mx-auto"><a class="btn btn-outline-primary" data-toggle="collapse" href="#album1" role="button"
-                  aria-expanded="false" aria-controls="album1">Tracklist</a></p>
-              <div class="collapse multi-collapse" id="album1">
-                <ol class="album-tracklist list-group-item">
-                  <li>...Ready For It?</li>
-                  <li>End Game</li>
-                  <li>I Did Something Bad</li>
-                  <li>Don't Blame Me</li>
-                  <li>Delicate</li>
-                  <li>Look What You Made Me Do</li>
-                  <li>So It Goes</li>
-                  <li>Gorgeous</li>
-                  <li>Gateway Car</li>
-                  <li>King Of My Heart</li>
-                  <li>Dancing With Our Hands Tied</li>
-                  <li>Dres</li>
-                  <li>This Is Why We Can't Have Nice Things</li>
-                  <li>Call It What You Want</li>
-                  <li>New Year's Day</li>
-                </ol>
+    </section>
+    <section id="favAlbums">
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb mx-4 bg-light">
+            <li class="breadcrumb-item" aria-current="page">
+              <a href="#">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Favourite Albums
+            </li>
+          </ol>
+        </nav>
+        <div class="album-container">
+          <div
+            class="row row-cols-2 row-cols-md-3 row-cols-lg-4 collapse show"
+            id="favs"
+          >
+            <div class="col">
+              <div class="card">
+                <img
+                  src="https://i.scdn.co/image/ab67616d0000b27380573b550211a163008a377d"
+                  class="card-img-top img-fluid img-thumbnail album-cover"
+                  alt="Aimer 16th single"
+                />
+                <div class="card-header text-center album-title">
+                  花の唄／I beg you／春はゆく
+                </div>
+                <div class="card-text text-center album-group">Aimer</div>
+                <p class="mx-auto">
+                  <a
+                    class="btn btn-outline-primary"
+                    data-toggle="collapse"
+                    href="#album1"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="album1"
+                    >Tracklist</a
+                  >
+                </p>
+                <!-- <div class="collapse multi-collapse" id="album1">
+                  <ol class="album-tracklist list-group-item">
+                    <li>花の唄</li>
+                    <li>I beg you</li>
+                    <li>春はゆく</li>
+                    <li>花の唄 end of spring ver.</li>
+                    <li>春はゆく the late spring ver.</li>
+                  </ol>
+                </div> -->
+                <div class="collapse tracklist" id="album1">
+                  <div class="row row-cols-3">
+                    <div class="col-1 mx-0">
+                      <ol class="album-tracklist-nbr list-group-item mx-0 pr-2">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                      </ol>
+                    </div>
+                    <div class="col-8 mx-0 px-0">
+                      <ul
+                        class="album-tracklist-title list-group-item list-unstyled pl-3 text-truncate"
+                      >
+                        <li class="text-truncate">花の唄</li>
+                        <li class="text-truncate">I beg you</li>
+                        <li class="text-truncate">春はゆく</li>
+                        <li class="text-truncate">花の唄 end of spring ver.</li>
+                        <li class="text-truncate">
+                          春はゆく the late spring ver.
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-2 px-0 mx-0">
+                      <ul
+                        class="album-tracklist-length list-group-item mx-0 list-unstyled text-nowrap px-0"
+                      >
+                        <li>06:11</li>
+                        <li>04:28</li>
+                        <li>05:06</li>
+                        <li>05:33</li>
+                        <li>05:33</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="album-genre mx-auto">
+                  <span class="badge badge-pill badge-warning">JPOP </span>
+                  <span class="badge badge-pill badge-warning">Anime </span>
+                </div>
+                <a
+                  href="https://open.spotify.com/album/3mWNdupjokTYVrE8TPVV8x"
+                  class="btn btn-info"
+                  style="margin: 8px 8px"
+                  >Listen on Spotify</a
+                >
               </div>
-              <div class="album-genre">
-                <span class="badge badge-pill badge-warning">pop
-                </span>
-                <span class="badge badge-pill badge-warning">country
-                </span>
-              </div> <a href="https://open.spotify.com/album/6DEjYFkNZh67HP7R9PSZvv" class="btn btn-info"
-                style="margin: 8px 8px;">Listen on Spotify</a>
+            </div>
+
+            <div class="col">
+              <div class="card">
+                <img
+                  src="https://i.scdn.co/image/ab67616d0000b273924ad89f6086e0d722122286"
+                  class="img-fluid img-thumbnail album-cover"
+                  alt="Gogo penguin first album"
+                />
+                <div class="card-header text-center album-title">fanfares</div>
+                <div class="card-text text-center album-group">
+                  GoGo Penguin
+                </div>
+                <p class="mx-auto">
+                  <a
+                    class="btn btn-outline-primary"
+                    data-toggle="collapse"
+                    href="#album2"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="album2"
+                    >Tracklist</a
+                  >
+                </p>
+                <!-- <div class="collapse multi-collapse" id="album2">
+                  <ol class="album-tracklist list-group-item">
+                    <li>Seven Sons of Bjorn</li>
+                    <li>Last Words</li>
+                    <li>Unconditional</li>
+                    <li>FanFares</li>
+                    <li>I am that</li>
+                    <li>Akasthesia</li>
+                    <li>HF</li>
+                  </ol>
+                </div> -->
+                <div class="collapse tracklist" id="album2">
+                  <div class="row row-cols-3">
+                    <div class="col-1 mx-0">
+                      <ol class="album-tracklist-nbr list-group-item mx-0 pr-2">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                      </ol>
+                    </div>
+                    <div class="col-8 mx-0 px-0">
+                      <ul
+                        class="album-tracklist-title list-group-item list-unstyled pl-3"
+                      >
+                        <li class="text-truncate">Seven Sons of Bjorn</li>
+                        <li class="text-truncate">Last Words</li>
+                        <li class="text-truncate">Unconditional</li>
+                        <li class="text-truncate">FanFares</li>
+                        <li class="text-truncate">I am that</li>
+                        <li class="text-truncate">Akasthesia</li>
+                        <li class="text-truncate">HF</li>
+                      </ul>
+                    </div>
+                    <div class="col-2 px-0 mx-0">
+                      <ul
+                        class="album-tracklist-length list-group-item mx-0 list-unstyled text-nowrap px-0"
+                      >
+                        <li>05:17</li>
+                        <li>03:05</li>
+                        <li>05:15</li>
+                        <li>04:53</li>
+                        <li>04:05</li>
+                        <li>06:01</li>
+                        <li>06:36</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="album-genre mx-auto">
+                  <span class="badge badge-pill badge-warning"
+                    >Jazz Fusion</span
+                  >
+                  <span class="badge badge-pill badge-warning"
+                    >Progressive Jazz</span
+                  >
+                </div>
+                <a
+                  href="https://open.spotify.com/track/3avXI6fsVgAWCExjiZwW3N"
+                  class="btn btn-info"
+                  style="margin: 8px 8px"
+                  >Listen on Spotify</a
+                >
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card">
+                <img
+                  src="https://img.discogs.com/qKrPA4ZLOl8o64xsy0txlteGmjA=/fit-in/600x608/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2201083-1269484172.jpeg.jpg"
+                  class="card-img-top img-fluid img-thumbnail album-cover"
+                  alt="Touhou doujin music"
+                />
+                <div class="card-header text-center album-title">
+                  Double Counterpoint
+                </div>
+                <div class="card-text text-center album-group">
+                  Studio Syrup Comfiture
+                </div>
+                <p class="mx-auto">
+                  <a
+                    class="btn btn-outline-primary"
+                    data-toggle="collapse"
+                    href="#album3"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="album3"
+                    >Tracklist</a
+                  >
+                </p>
+                <div class="collapse multi-collapse" id="album3">
+                  <ol class="album-tracklist list-group-item">
+                    <li>Radio Programs</li>
+                    <li>Against, Perfect Cherry Blossom.</li>
+                    <li>Real Intension</li>
+                    <li>Imperishable Night</li>
+                    <li>Story of the End</li>
+                    <li>Hale inthe 270°</li>
+                    <li>Spritual</li>
+                    <li>Structure Frame</li>
+                    <li>Punishing Fire</li>
+                    <li>Romantic Night</li>
+                    <li>Space Gate</li>
+                    <li>Spring Comes Along</li>
+                    <li>Ripple</li>
+                  </ol>
+                </div>
+                <div class="album-genre mx-auto">
+                  <span class="badge badge-pill badge-warning">Touhou</span>
+                  <span class="badge badge-pill badge-warning">Electronic</span>
+                </div>
+                <a
+                  href="https://www.youtube.com/watch?v=VTP_XNpezYc"
+                  class="btn btn-info"
+                  style="margin: 8px 8px"
+                  >Listen on Youtube</a
+                >
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card">
+                <img
+                  src="https://i.scdn.co/image/ab67616d0000b27330f8e0f777376780c4077507"
+                  class="card-img-top img-fluid img-thumbnail album-cover"
+                  alt="Pendulum latest album"
+                />
+
+                <div class="card-header text-center album-title">Immersion</div>
+                <div class="card-text text-center album-group">Pendulum</div>
+                <p class="mx-auto">
+                  <a
+                    class="btn btn-outline-primary"
+                    data-toggle="collapse"
+                    href="#album4"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="album4"
+                    >Tracklist</a
+                  >
+                </p>
+                <div class="collapse multi-collapse" id="album4">
+                  <ol class="album-tracklist list-group-item">
+                    <li>Genesis</li>
+                    <li>Salt In The Wounds</li>
+                    <li>Watercolour</li>
+                    <li>Set me On Fire</li>
+                    <li>Crush</li>
+                    <li>Under The Waves</li>
+                    <li>Immunize</li>
+                    <li>The Island - Pt. I (Dawn)</li>
+                    <li>The Island - Pt. II (Dusk)</li>
+                    <li>Comprachicos</li>
+                    <li>The Vulture</li>
+                    <li>Witchcraft</li>
+                    <li>Self Vs Self</li>
+                    <li>The Fountain</li>
+                    <li>Encoder</li>
+                  </ol>
+                </div>
+                <div class="album-genre mx-auto">
+                  <span class="badge badge-pill badge-warning"
+                    >Drum and Bass
+                  </span>
+                </div>
+                <a
+                  href="https://open.spotify.com/album/3XtEGVx9uh7J46nBzEc1VS"
+                  class="btn btn-info"
+                  style="margin: 8px 8px"
+                  >Listen on Spotify</a
+                >
+              </div>
             </div>
           </div>
         </div>
         <div class="mx-auto text-center">
-          <a class="btn btn-outline-secondary" data-toggle="collapse" data-target="#badList" role="button"
-            aria-expanded="false" aria-controls="badList">Toggle albums</a>
+          <a
+            class="btn btn-outline-secondary"
+            data-toggle="collapse"
+            data-target="#favs"
+            role="button"
+            aria-expanded="false"
+            aria-controls="favs"
+            >Toggle albums</a
+          >
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="#bestMusicians">
-    <div class="container">
-      <div class="row collapse show" id="ringo">
-        <div class="col-sm-12 col-md-6 mx-auto">
-          <figure class="figure">
-            <img class="img-fluid rounded float-left img-thumbnail "
-              src="https://lastfm.freetls.fastly.net/i/u/770x0/c7c1c6472a51cb4fee3f97ddf3907273.webp#c7c1c6472a51cb4fee3f97ddf3907273"
-              alt="avatar">
-            <figcaption class="figure-caption text-right">椎名林檎</figcaption>
-          </figure>
+    <section id="badAlbums">
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-light mx-3">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Hall of Shame
+            </li>
+          </ol>
+        </nav>
+        <div class="album-container">
+          <div class="row" id="badList">
+            <div class="col col-sm-6 col-md-4 col-lg-3">
+              <div class="card">
+                <img
+                  src="https://i.scdn.co/image/ab67616d0000b273da5d5aeeabacacc1263c0f4b"
+                  class="card-img-top img-fluid img-thumbnail album-cover"
+                  alt="Worst album ever"
+                />
+                <div class="card-header text-center album-title">
+                  reputation
+                </div>
+                <div class="card-text text-center album-group">
+                  Taylor Swift
+                </div>
+                <p class="mx-auto">
+                  <a
+                    class="btn btn-outline-primary"
+                    data-toggle="collapse"
+                    href="#album1"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="album1"
+                    >Tracklist</a
+                  >
+                </p>
+                <div class="collapse multi-collapse" id="album1">
+                  <ol class="album-tracklist list-group-item">
+                    <li>...Ready For It?</li>
+                    <li>End Game</li>
+                    <li>I Did Something Bad</li>
+                    <li>Don't Blame Me</li>
+                    <li>Delicate</li>
+                    <li>Look What You Made Me Do</li>
+                    <li>So It Goes</li>
+                    <li>Gorgeous</li>
+                    <li>Gateway Car</li>
+                    <li>King Of My Heart</li>
+                    <li>Dancing With Our Hands Tied</li>
+                    <li>Dres</li>
+                    <li>This Is Why We Can't Have Nice Things</li>
+                    <li>Call It What You Want</li>
+                    <li>New Year's Day</li>
+                  </ol>
+                </div>
+                <div class="album-genre">
+                  <span class="badge badge-pill badge-warning">pop </span>
+                  <span class="badge badge-pill badge-warning">country </span>
+                </div>
+                <a
+                  href="https://open.spotify.com/album/6DEjYFkNZh67HP7R9PSZvv"
+                  class="btn btn-info"
+                  style="margin: 8px 8px"
+                  >Listen on Spotify</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="mx-auto text-center">
+            <a
+              class="btn btn-outline-secondary"
+              data-toggle="collapse"
+              data-target="#badList"
+              role="button"
+              aria-expanded="false"
+              aria-controls="badList"
+              >Toggle albums</a
+            >
+          </div>
         </div>
-        <div class="col-sm-12 col-md-6">
-          <p class="text-justify text-wrap collapse show">
+      </div>
+    </section>
 
-            Miss Ringo is a popular Japanese singer-songwriter who’s gotten some attention
-            in the
-            West.
-            She seems to go for a mix of jazz and pop-inspired elements in her music. This could potentially turn into a
-            mess,
-            but Shiina is very good at her job. She’s a fine pianist (and she can play a bunch of other instruments as
-            well)
-            and a great songwriter – almost every song of hers I’ve heard so far is catchy as hell. For an example,
-            check
-            out <a href="https://www.youtube.com/watch?v=Sy_08-HcR3Y">this song</a>! Shiina Ringo is one of the few
-            singer-songwriter types I care for at all. A lot of the really popular ones seem kind of overrated to me,
-            and
-            some of them are full of themselves or attention-grabbers etc. which can come through in their lyrics
-            sometimes. I have no idea what she’s like – from the little I’ve read, she doesn’t say much about herself
-            and
-            puts on a mysterious persona. And since I can’t understand most of her lyrics, their contents don’t present
-            any problem to me. It might sound weird, but I prefer not to know what she’s singing about. Though it’s
-            possible her lyrics are really profound. I have no idea. If this post seems short, it’s because I have a
-            hard
-            time writing about music. A few writers are really good at it and I’m not among their number. For me, trying
-            to describe music to someone through words is a poor substitute for just playing the music for them, so
-            check
-            out the links above instead if you’re interested.
-          </p>
+    <section id="#bestMusicians">
+      <div class="container">
+        <nav aria-label="breadcrumb px-3">
+          <ol class="breadcrumb bg-light">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Best of Musicians
+            </li>
+          </ol>
+        </nav>
+        <div class="row collapse show" id="ringo">
+          <div class="col-sm-12 col-md-6 mx-auto">
+            <figure class="figure">
+              <img
+                class="img-fluid rounded float-left img-thumbnail"
+                src="https://lastfm.freetls.fastly.net/i/u/770x0/c7c1c6472a51cb4fee3f97ddf3907273.webp#c7c1c6472a51cb4fee3f97ddf3907273"
+                alt="avatar"
+              />
+              <figcaption class="figure-caption text-right">
+                椎名林檎
+              </figcaption>
+            </figure>
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <p class="text-justify text-wrap collapse show">
+              Miss Ringo is a popular Japanese singer-songwriter who’s gotten
+              some attention in the West. She seems to go for a mix of jazz and
+              pop-inspired elements in her music. This could potentially turn
+              into a mess, but Shiina is very good at her job. She’s a fine
+              pianist (and she can play a bunch of other instruments as well)
+              and a great songwriter – almost every song of hers I’ve heard so
+              far is catchy as hell. For an example, check out
+              <a href="https://www.youtube.com/watch?v=Sy_08-HcR3Y">this song</a
+              >! <br />
+
+              Shiina Ringo is one of the few singer-songwriter types I care for
+              at all. A lot of the really popular ones seem kind of overrated to
+              me, and some of them are full of themselves or attention-grabbers
+              etc. which can come through in their lyrics sometimes. I have no
+              idea what she’s like – from the little I’ve read, she doesn’t say
+              much about herself and puts on a mysterious persona. And since I
+              can’t understand most of her lyrics, their contents don’t present
+              any problem to me. It might sound weird, but I prefer not to know
+              what she’s singing about. Though it’s possible her lyrics are
+              really profound. I have no idea. If this post seems short, it’s
+              because I have a hard time writing about music. A few writers are
+              really good at it and I’m not among their number. For me, trying
+              to describe music to someone through words is a poor substitute
+              for just playing the music for them, so check out the links above
+              instead if you’re interested.
+            </p>
+          </div>
+        </div>
+        <div class="mx-auto text-center">
+          <a
+            class="btn btn-outline-secondary"
+            data-toggle="collapse"
+            data-target="#ringo"
+            role="button"
+            aria-expanded="false"
+            aria-controls="ringo"
+            >Toggle paragraph</a
+          >
         </div>
       </div>
-      <div class="mx-auto text-center">
-        <a class="btn btn-outline-secondary" data-toggle="collapse" data-target="#ringo" role="button"
-          aria-expanded="false" aria-controls="ringo">Toggle paragraph</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="albumArts">
-    <div id="container">
-      <div class="row row-cols-lg-5 row-cols-md-4 row-cols-sm-2 mx-auto collapse show" id="randomAlbumArts"
-        style="width: 70vw">
-        <img src="https://i.scdn.co/image/ab67616d0000b2733e57b4ee6a7e1ea884fe3723"
-          class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-12"
-          alt="random album arts">
-        <img src="https://i.scdn.co/image/ab67616d0000b2733483c67a7eb215608a3037fe"
-          class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-12"
-          alt="random album arts">
-        <img src="https://i.scdn.co/image/ab67616d0000b2735a1e5f4683e25875fe6cc189"
-          class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-12"
-          alt="random album arts">
-        <img src="https://i.scdn.co/image/ab67616d0000b273ab05d85e404240f09429bdc1"
-          class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-8"
-          alt="random album arts">
-        <img src="https://otakusync.thisistap.com/wp-content/uploads/ALSTROEMERIARECORDSPLASTIKWORLD.jpg"
-          class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-1"
-          alt="random album arts">
-        <img src="https://upload.wikimedia.org/wikipedia/en/c/c2/Silbermond-nichts_passiert_a.jpg"
-          class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-10"
-          alt="random album arts">
-        <img
-          src="https://hosting.photobucket.com/albums/t10/s08333/cd%20evaluation/3a18480cba8b290e40a4a30993fb9827.jpg"
-          class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-6"
-          alt="random album arts">
-        <img src="https://i.scdn.co/image/ab67616d0000b273a2b2aded4b3defaa95c10aae"
-          class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-8"
-          alt="random album arts">
-        <img src="https://i.pinimg.com/736x/6a/36/3e/6a363e864552cbfb7668ef08740d65ff.jpg"
-          class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-4"
-          alt="random album arts">
-        <img src="https://i.scdn.co/image/ab67616d0000b273e6b2ce293481b3dffcbda969"
-          class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-4"
-          alt="random album arts">
-        <img
-          src="https://booth.pximg.net/f3395dac-aaa9-42c7-8bbd-2706ac0ba1df/i/1460188/6a500922-f9f6-47f8-9bdd-6d003f5120b6_base_resized.jpg"
-          class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-4"
-          alt="random album arts">
-        <img src="https://i.scdn.co/image/ab67616d0000b2739fd0d700bdf33c9ebc42f429"
-          class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-8"
-          alt="random album arts">
-        <img src="https://i.scdn.co/image/ab67616d0000b273f9bd4e49095927b3ba81b1d9"
-          class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-10"
-          alt="random album arts">
-        <img src="https://tc-animate.techorus-cdn.com/resize_image/resize_image.php?image=03231152_5e78246ea2692.jpg"
-          class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-1"
-          alt="random album arts">
-        <img src="https://i.scdn.co/image/ab67616d0000b273ec5c01145c833cb43355bd4e"
-          class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-4"
-          alt="random album arts">
-        <img src="https://i.scdn.co/image/ab67616d0000b273c8f7c8f061c36721d6fb10e8"
-          class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-6"
-          alt="random album arts">
-        <img src="https://otakusync.thisistap.com/wp-content/uploads/HUNDREDHUNDRED-350x350.jpg"
-          class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-2"
-          alt="random album arts">
-        <img src="https://i.kfs.io/album/global/18689072,1v1/fit/500x500.jpg"
-          class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-6"
-          alt="random album arts">
-        <img src="https://i.scdn.co/image/ab67616d0000b27346be6d955cd9c389fd7da5b2"
-          class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-6"
-          alt="random album arts">
-        <img src="https://images-na.ssl-images-amazon.com/images/I/61%2BUw-UmEhL._AC_.jpg"
-          class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-6"
-          alt="random album arts">
+    <section id="albumArts">
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-light mx-4">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Other Albums
+            </li>
+          </ol>
+        </nav>
+        <div
+          class="row row-cols-lg-5 row-cols-md-4 row-cols-sm-2 mx-auto collapse show"
+          id="randomAlbumArts"
+          style="width: 55vw"
+        >
+          <img
+            src="https://i.scdn.co/image/ab67616d0000b2733e57b4ee6a7e1ea884fe3723"
+            class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-12"
+            alt="random album arts"
+          />
+          <img
+            src="https://i.scdn.co/image/ab67616d0000b2733483c67a7eb215608a3037fe"
+            class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-12"
+            alt="random album arts"
+          />
+          <img
+            src="https://i.scdn.co/image/ab67616d0000b2735a1e5f4683e25875fe6cc189"
+            class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-12"
+            alt="random album arts"
+          />
+          <img
+            src="https://i.scdn.co/image/ab67616d0000b273ab05d85e404240f09429bdc1"
+            class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-8"
+            alt="random album arts"
+          />
+          <img
+            src="https://otakusync.thisistap.com/wp-content/uploads/ALSTROEMERIARECORDSPLASTIKWORLD.jpg"
+            class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-1"
+            alt="random album arts"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/c/c2/Silbermond-nichts_passiert_a.jpg"
+            class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-10"
+            alt="random album arts"
+          />
+          <img
+            src="https://hosting.photobucket.com/albums/t10/s08333/cd%20evaluation/3a18480cba8b290e40a4a30993fb9827.jpg"
+            class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-6"
+            alt="random album arts"
+          />
+          <img
+            src="https://i.scdn.co/image/ab67616d0000b273a2b2aded4b3defaa95c10aae"
+            class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-8"
+            alt="random album arts"
+          />
+          <img
+            src="https://i.pinimg.com/736x/6a/36/3e/6a363e864552cbfb7668ef08740d65ff.jpg"
+            class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-4"
+            alt="random album arts"
+          />
+          <img
+            src="https://i.scdn.co/image/ab67616d0000b273e6b2ce293481b3dffcbda969"
+            class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-4"
+            alt="random album arts"
+          />
+          <img
+            src="https://booth.pximg.net/f3395dac-aaa9-42c7-8bbd-2706ac0ba1df/i/1460188/6a500922-f9f6-47f8-9bdd-6d003f5120b6_base_resized.jpg"
+            class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-4"
+            alt="random album arts"
+          />
+          <img
+            src="https://i.scdn.co/image/ab67616d0000b2739fd0d700bdf33c9ebc42f429"
+            class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-8"
+            alt="random album arts"
+          />
+          <img
+            src="https://i.scdn.co/image/ab67616d0000b273f9bd4e49095927b3ba81b1d9"
+            class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-10"
+            alt="random album arts"
+          />
+          <img
+            src="https://tc-animate.techorus-cdn.com/resize_image/resize_image.php?image=03231152_5e78246ea2692.jpg"
+            class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-1"
+            alt="random album arts"
+          />
+          <img
+            src="https://i.scdn.co/image/ab67616d0000b273ec5c01145c833cb43355bd4e"
+            class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-4"
+            alt="random album arts"
+          />
+          <img
+            src="https://i.scdn.co/image/ab67616d0000b273c8f7c8f061c36721d6fb10e8"
+            class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-6"
+            alt="random album arts"
+          />
+          <img
+            src="https://otakusync.thisistap.com/wp-content/uploads/HUNDREDHUNDRED-350x350.jpg"
+            class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-2"
+            alt="random album arts"
+          />
+          <img
+            src="https://i.kfs.io/album/global/18689072,1v1/fit/500x500.jpg"
+            class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-6"
+            alt="random album arts"
+          />
+          <img
+            src="https://i.scdn.co/image/ab67616d0000b27346be6d955cd9c389fd7da5b2"
+            class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-6"
+            alt="random album arts"
+          />
+          <img
+            src="https://images-na.ssl-images-amazon.com/images/I/61%2BUw-UmEhL._AC_.jpg"
+            class="img-fluid img-thumbnail float-left randomAlbumArt album-cover d-block order-sm-6"
+            alt="random album arts"
+          />
+        </div>
+        <div class="mx-auto text-center">
+          <a
+            class="btn btn-outline-secondary"
+            data-toggle="collapse"
+            data-target="#randomAlbumArts"
+            role="button"
+            aria-expanded="false"
+            aria-controls="randomAlbumArts"
+            >Toggle Album Arts</a
+          >
+        </div>
       </div>
-      <div class="mx-auto text-center">
-        <a class="btn btn-outline-secondary" data-toggle="collapse" data-target="#randomAlbumArts" role="button"
-          aria-expanded="false" aria-controls="randomAlbumArts">Toggle Album Arts</a>
+    </section>
+    <footer>
+      <div class="container">
+        <p class="text-center">
+          Share your preference on <a href="https://last.fm">Last.fm</a>!
+        </p>
+        <p class="text-center text-secondary">
+          <script>
+            function albumNbr() {
+              let cover = document.getElementsByClassName("album-cover").length;
+              document.write("There are " + cover + " albums in this page.");
+            }
+            console.log(albumNbr());
+          </script>
+        </p>
+        <div class="contactUs my-5 mx-auto col col-md-6 justify-content-center">
+          <div class="card-header">Contact Us</div>
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Your contact email here"
+            />
+            <div class="input-group-append">
+              <button class="btn btn-outline-info">Submit</button>
+            </div>
+          </div>
+          <div class="input-group">
+            <textarea
+              class="form-control"
+              aria-label="textarea"
+              rows="6"
+              placeholder="Share your thought of our page here!"
+            ></textarea>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-  <footer>
-    <div class="container">
-      <p class="text-center">Share your preference on <a href="https://last.fm">Last.fm</a>!</p>
-      <p class="text-center text-secondary">
-        <script>
-          function albumNbr() {
-            let cover = document.getElementsByClassName('album-cover').length;
-            document.write("There are " + cover + " albums in this page.");
-          }
-          console.log(albumNbr());
-        </script>
-      </p>
-    </div>
-  </footer>
-</body>
-
+    </footer>
+  </body>
 </html>
