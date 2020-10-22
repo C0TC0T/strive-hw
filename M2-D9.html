@@ -33,129 +33,6 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
-    <style>
-      .notify {
-        position: absolute;
-        display: inline-block;
-        left: 4px;
-        top: 4px;
-      }
-
-      .notify2nd {
-        position: absolute;
-        display: inline-block;
-        left: 4px;
-        top: 30px;
-      }
-      .notify,
-      .notify2nd {
-        opacity: 0;
-      }
-
-      .album-cover:hover,
-      .album-cover:focus {
-        box-shadow: 0 4px 8px 4px #ccc;
-      }
-      .album-cover:hover ~ .album-genre .badge,
-      .album-cover:focus ~ .album-genre .badge {
-        opacity: 1;
-      }
-      .album-container {
-        margin: 0 auto;
-        padding: 2vh 2vw;
-        /* width: 80vw;
-             height: 80vh; */
-      }
-
-      .album-cover {
-        padding: 0;
-      }
-
-      .album-title {
-        font-size: 1.25em !important;
-        padding: 16px 4px;
-        font-weight: 700;
-      }
-
-      .album-group {
-        font-size: 1.2em !important;
-        padding: 8px 4px;
-      }
-
-      .album-genre {
-        padding: 0 10%;
-        align-self: flex center;
-        font-style: italic;
-        font-size: 1em !important;
-      }
-
-      .album-tracklist,
-      .album-tracklist-nbr,
-      .album-tracklist-title,
-      .album-tracklist-length {
-        background: #f0f0f0;
-        border: 0;
-      }
-
-      .tracklist .row {
-        padding: 0.5rem 0;
-        border-bottom: 1px solid #ccc;
-      }
-      .album-container > .row > .col {
-        margin: 1rem 0;
-        padding: 0 0.5rem;
-      }
-
-      section {
-        padding: 150px 0;
-      }
-
-      img.randomAlbumArt {
-        border: 4px solid black;
-        padding: 0;
-        margin: -2px;
-      }
-
-      #albumArts .btn {
-        margin: 20px auto;
-      }
-
-      .breadcrumb-item + .breadcrumb-item::before {
-        color: #ccc;
-        content: "≫";
-        padding: 0 8px 0 4px;
-      }
-
-      .breadcrumb-item + li:not(a)::after {
-        color: #aaa;
-        content: "♪";
-        padding: 0 8px 0 4px;
-      }
-      .jumbotron {
-        color: #fff;
-        background-image: url(https://panora.tokyo/wp-content/uploads/2019/10/nijisanjimf-5649.jpg);
-        background-size: contain;
-        background-position: center;
-        background-attachment: fixed;
-        min-height: 55vh;
-      }
-
-      .rmBtn {
-        margin: 0;
-        padding: 0;
-        height: 0;
-      }
-      .rmBtn svg {
-        margin: 0;
-        padding: 0;
-        z-index: 2;
-        width: 1rem;
-        display: inline-block;
-        position: relative;
-        transform: translateY(-1.6rem);
-        fill: red;
-      }
-    </style>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -171,6 +48,7 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="./M2-D9.css" />
   </head>
 
   <body>
@@ -389,8 +267,9 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
                 <div class="collapse tracklist" id="album1">
                   <div class="col">
                     <div class="row justify-content-between album-tracklist">
-                      <div class="album-tracklist-nbr">
+                      <div class="album-tracklist-nbr text-center text-center">
                         1
+                        <!-- embbed testing button for comparison
                         <div class="rmBtn">
                           <svg
                             width="2em"
@@ -405,7 +284,7 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
                               d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"
                             />
                           </svg>
-                        </div>
+                        </div>-->
                       </div>
 
                       <div class="album-tracklist-title text-truncate">
@@ -414,21 +293,21 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
                       <div class="album-tracklist-length">06:11</div>
                     </div>
                     <div class="row justify-content-between album-tracklist">
-                      <div class="album-tracklist-nbr">2</div>
+                      <div class="album-tracklist-nbr text-center">2</div>
                       <div class="album-tracklist-title text-truncate">
                         I beg you
                       </div>
                       <div class="album-tracklist-length">04:28</div>
                     </div>
                     <div class="row justify-content-between album-tracklist">
-                      <div class="album-tracklist-nbr">3</div>
+                      <div class="album-tracklist-nbr text-center">3</div>
                       <div class="album-tracklist-title text-truncate">
                         春はゆく
                       </div>
                       <div class="album-tracklist-length">05:06</div>
                     </div>
                     <div class="row justify-content-between album-tracklist">
-                      <div class="album-tracklist-nbr">4</div>
+                      <div class="album-tracklist-nbr text-center">4</div>
                       <div
                         class="album-tracklist-title d-flex text-truncate w-50"
                       >
@@ -437,7 +316,7 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
                       <div class="album-tracklist-length">05:33</div>
                     </div>
                     <div class="row justify-content-between album-tracklist">
-                      <div class="album-tracklist-nbr">5</div>
+                      <div class="album-tracklist-nbr text-center">5</div>
                       <div class="album-tracklist-title w-50 text-truncate">
                         花の唄 the late spring ver.
                       </div>
@@ -1010,19 +889,20 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
             "http://www.w3.org/2000/svg",
             "svg"
           );
-          let path = document.createElement("path");
+          let path = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "path"
+          );
           path.setAttribute("fill-rule", "evenodd");
-          path.setAttribute(
+          path.setAttributeNS(
+            null,
             "d",
             "M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"
           );
-          path.setAttribute("width", "16px");
-          path.setAttribute("height", "16px");
+
           svg.appendChild(path);
-          svg.setAttribute("width", "2em");
-          svg.setAttribute("height", "2em");
-          svg.setAttribute("viewBox", "0 0 16 16");
-          svg.setAttribute("fill", "currentColor");
+          svg.setAttributeNS(null, "viewBox", "0 0 16 16");
+          svg.setAttributeNS(null, "fill", "currentColor");
           svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
           svg.classList = "bi bi-x-square-fill";
           console.log("btn done");
