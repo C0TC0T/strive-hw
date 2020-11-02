@@ -287,7 +287,11 @@ const lowUppercase = function (str) {
 18)
 
 Create a function to calculate the sum of the two given integers, If the sum is in the range 50..80 return 65 other wise return 80.
+*/
 
+const isEighty = (i, j) => (i + j >= 50 && i + j <= 80 ? 65 : 80);
+
+/*
 19)
 
 Create a function to convert a number to a string, the contents of which depend on the number's factors. Follow next example:
