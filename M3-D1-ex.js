@@ -27,7 +27,6 @@ commonly used in the string.
 
 const maxChar = function (str) {
   let obj = {};
-  let duplicate = [];
   for (i = 0; i < str.length; i++) {
     let l = str.charAt(i);
     obj[l] = isNaN(obj[l]) ? 1 : obj[l] + 1;
@@ -51,26 +50,27 @@ or punctuation.  Consider capital letters to be the same as lower case
 const anagrams = function (a, b) {
   a.replace(/[\W_]/g, "");
   b.replace(/[\W_]/g, "");
-  let result = 0;
-  let m = a.toLowerCase().split("");
-  let n = b.toLowerCase();
-  for (let i = 0; i < m.length; i++) {
-    if (n.includes(m[i])) {
-      result++;
-    } else {
-      result = 0;
-      break;
+  let m = a.toLowerCase().split("").sort();
+  let n = b.toLowerCase().split("").sort();
+  if (m.length === n.length) {
+    for (i = 0; i < m.length; i++) {
+      if (m[i] !== n[i]) {
+        return false;
+      }
     }
+    return true;
+  } else {
+    return false;
   }
-  return Boolean(result);
 };
 
+console.log(anagrams("rail safety", "fairy tales"));
 /* 3) ANAGRAMS 2
 Given a word and a list of possible anagrams, select the correct sublist.
 --- Examples
     "listen" and a list of candidates like "enlists" "google" "inlets" "banana" the program should return a list containing "inlets".
 */
-
+const anagramsArr = function () {};
 /* 4) PALINDROME
 Given a string, return true if the string is a palindrome
 or false if it is not.  Palindromes are strings that
