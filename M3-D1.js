@@ -3,6 +3,11 @@
 1)
 Create a function to calculate the sum of the two given integers. If the two values are same, then returns triple their sum.
 */
+const sum = function (a, b) {
+  if (!isNaN(a) && !isNaN(b) && parseInt(a) === parseInt(b)) {
+    return (a + b) * 3;
+  }
+};
 
 /*
 2)
