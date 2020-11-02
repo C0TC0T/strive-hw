@@ -87,6 +87,15 @@ const sumArr = function (arr) {
 9)
 Create a function to test whether an array of integers of length 2 contains 1 or a 3.
 */
+const oneOrThree = function (arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 1 || arr[i] === 3) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+};
 
 /*
 
