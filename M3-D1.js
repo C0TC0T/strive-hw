@@ -74,6 +74,12 @@ const findCity = (city) => {
 8)
 Create a function to calculate the sum of three elements of a given array of integers of length 3.
 */
+const sumArr = function (arr) {
+  for (let i = 1; i < arr.length; i++) {
+    tmp += arr[i];
+  }
+  return tmp;
+};
 
 /*
 
