@@ -3,17 +3,13 @@
 1)
 Create a function to calculate the sum of the two given integers. If the two values are same, then returns triple their sum.
 */
-const sum = function (a, b) {
-  if (!isNaN(a) && !isNaN(b) && parseInt(a) === parseInt(b)) {
-    return (a + b) * 3;
-  }
-};
-
+const tripleSum = (a, b) =>
+  parseInt(a) === parseInt(b) ? (a + b) * 3 : "two numbers are not equal";
 /*
 2)
 Create a function to check two given numbers and return true if one of the number is 50 or if their sum is 50.
 */
-
+const isFifty = (a, b) => (a === 50 || b === 50 || a + b === 50 ? true : false);
 /*
 3)
 Create a function to remove a character at the specified position of a given string and return the new string.
