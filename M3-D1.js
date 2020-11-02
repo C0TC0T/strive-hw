@@ -150,11 +150,34 @@ Types of angles:
     Right angle: An 90 degree angle.
     btuse angle: An angle between 90 and 180 degrees.
     Straight angle: A 180 degree angle.
+*/
+const angleType = function (nbr) {
+  nbr = parseInt(nbr);
+  switch (true) {
+    case nbr >= 0 && nbr < 90:
+      return "Acute angle";
+      break;
+    case nbr === 90:
+      return "Right angle";
+      break;
+    case nbr > 90 && nbr < 190:
+      return "btuse angle";
+      break;
+    case nbr === 180:
+      return "Straight angle";
+      break;
+    default:
+      return "out of reach";
+  }
+};
 
+/*
 13)
 
 Create a function to find the index of the greatest element of a given array of integers
+*/
 
+/*
 14)
 
 Create a function to get the largest even number from an array of integers.
