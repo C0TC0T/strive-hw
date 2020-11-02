@@ -48,6 +48,22 @@ or punctuation.  Consider capital letters to be the same as lower case
   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
   anagrams('Hi there', 'Bye there') --> False
 */
+const anagrams = function (a, b) {
+  a.replace(/[\W_]/g, "");
+  b.replace(/[\W_]/g, "");
+  let result = 0;
+  let m = a.toLowerCase().split("");
+  let n = b.toLowerCase();
+  for (let i = 0; i < m.length; i++) {
+    if (n.includes(m[i])) {
+      result++;
+    } else {
+      result = 0;
+      break;
+    }
+  }
+  return Boolean(result);
+};
 
 /* 3) ANAGRAMS 2
 Given a word and a list of possible anagrams, select the correct sublist.
