@@ -87,7 +87,7 @@ const sumArr = function (arr) {
 9)
 Create a function to test whether an array of integers of length 2 contains 1 or a 3.
 */
-const nietherOneOrThree = function (arr) {
+const oneOrThree = function (arr) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === 1 || arr[i] === 3) {
       return true;
@@ -115,7 +115,33 @@ const nietherOneOrThree = function (arr) {
 11)
 
 Create a function to find the longest string from a given array of strings.
+*/
 
+const findLongestArr = function (arr) {
+  let tmp = arr[0];
+  let unique = 0;
+  for (let i = 1; i < arr.length; i++) {
+    if (tmp.length === arr[i].length) {
+      unique = arr[i].length;
+    }
+    if (tmp.length < arr[i].length) {
+      tmp = arr[i];
+    }
+  }
+  if (unique !== 0) {
+    let multiLongest = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i].length === unique) {
+        multiLongest.push(arr[i]);
+      }
+    }
+    return multiLongest;
+  } else {
+    return tmp;
+  }
+};
+
+/*
 12)
 
 Create a function to find the types of a given angle.
