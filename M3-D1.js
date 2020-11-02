@@ -5,18 +5,23 @@ Create a function to calculate the sum of the two given integers. If the two val
 */
 const tripleSum = (a, b) =>
   parseInt(a) === parseInt(b) ? (a + b) * 3 : "two numbers are not equal";
+
 /*
 2)
 Create a function to check two given numbers and return true if one of the number is 50 or if their sum is 50.
 */
 const isFifty = (a, b) => (a === 50 || b === 50 || a + b === 50 ? true : false);
+
 /*
 3)
 Create a function to remove a character at the specified position of a given string and return the new string.
 */
-
+const striveSplice = function (str, nbr) {
+  let arr = [];
+  arr = str.split("");
+  return arr.splice(nbr - 1, 1);
+};
 /*
-
 4)
  Create a function to find the largest of three given integers.
 */
