@@ -64,6 +64,11 @@ const multiStr = (str, nbr) => {
 7)
 Create a function to display the city name if the string begins with "Los" or "New" otherwise return blank.
 */
+const cap = (str) => str.replace(/^\w/, (c) => c.toUpperCase());
+const findCity = (city) => {
+  let str = cap(city);
+  str.startsWith("Los") || str.startsWith("New") ? console.log(str) : "";
+};
 
 /*
 8)
