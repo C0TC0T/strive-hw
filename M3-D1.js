@@ -307,8 +307,29 @@ this would be a simple "Stefano".
 this would be a "DiegoRiccardo".
 34 has four factors: 1, 2, 17, and 34.
 this would be "34".
+*/
+const striveDivision = function (n) {
+  let result = "";
+  if (!(n % 3)) {
+    result += "Diego";
+  }
+  if (!(n % 5)) {
+    result += "Riccardo";
+  }
+  if (!(n % 7)) {
+    result += "Stefano";
+  }
 
+  return result;
+};
+
+/*
 20)
 Create a function that given a phrase returns its acronym, like British Broadcasting Corporation returns BBC
-
 */
+const acronym = function (str) {
+  let arr = str.split(" ");
+  let result = "";
+  arr.forEach((arr) => (result += arr.substr(0, 1).toUpperCase()));
+  return result;
+};
