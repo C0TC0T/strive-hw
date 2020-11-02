@@ -116,7 +116,6 @@ const nietherOneOrThree = function (arr) {
 
 Create a function to find the longest string from a given array of strings.
 */
-
 const findLongestArr = function (arr) {
   let tmp = arr[0];
   let unique = 0;
