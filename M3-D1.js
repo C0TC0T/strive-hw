@@ -213,6 +213,33 @@ const findGreatest = function (arr) {
 
 Create a function to get the largest even number from an array of integers.
 */
+const findGreatestEven = function (arr) {
+  let tmp = arr[0] % 2 === 0 ? arr[i] : 0;
+  let notUnique = [0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      if (tmp < arr[i]) {
+        tmp = arr[i];
+        if (notUnique.length === 1) {
+          notUnique[0] = i;
+        } else {
+          notUnique = 0;
+          notUnique.push(i);
+        }
+      }
+      if (tmp === arr[i]) {
+        if (notUnique[0] !== i) {
+          notUnique.push(i);
+        }
+      }
+    }
+  }
+  if (tmp.length === 1) {
+    return tmp[0];
+  } else {
+    return notUnique;
+  }
+};
 
 /*
 15)
@@ -222,7 +249,25 @@ Create a function to check two given numbers and return true if one of the numbe
 16)
 
 Create a function to check from two given integers, whether one is positive and another one is negative.
+*/
+const minAndMax = function (i, j) {
+  if (i > 0) {
+    console.log("i is positive");
+  } else if (i < 0) {
+    console.log("i is negative");
+  } else {
+    console.log("0 is neither positive nor negative");
+  }
+  if (j > 0) {
+    console.log("j is positive");
+  } else if (j < 0) {
+    console.log("j is negative");
+  } else {
+    console.log("0 is neither positive nor negative");
+  }
+};
 
+/*
 17)
 
 Create a function to create new string with first 3 characters are in lower case and the others in upper case. If the string length is less than 3 convert all the characters in upper case.
