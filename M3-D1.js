@@ -116,28 +116,34 @@ const nietherOneOrThree = function (arr) {
 
 Create a function to find the longest string from a given array of strings.
 */
-const findLongestArr = function (arr) {
-  let tmp = arr[0];
-  let unique = 0;
-  for (let i = 1; i < arr.length; i++) {
-    if (tmp.length === arr[i].length) {
-      unique = arr[i].length;
-    }
-    if (tmp.length < arr[i].length) {
-      tmp = arr[i];
-    }
-  }
-  if (unique !== 0) {
-    let multiLongest = [];
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i].length === unique) {
-        multiLongest.push(arr[i]);
-      }
-    }
-    return multiLongest;
-  } else {
-    return tmp;
-  }
+// const findLongestArr = function (arr) {
+//   let tmp = arr[0];
+//   let unique = 0;
+//   for (let i = 1; i < arr.length; i++) {
+//     if (tmp.length === arr[i].length) {
+//       unique = arr[i].length;
+//     }
+//     if (tmp.length < arr[i].length) {
+//       tmp = arr[i];
+//     }
+//   }
+//   if (unique !== 0) {
+//     let multiLongest = [];
+//     for (let i = 0; i < arr.length; i++) {
+//       if (arr[i].length === unique) {
+//         multiLongest.push(arr[i]);
+//       }
+//     }
+//     return multiLongest;
+//   } else {
+//     return tmp;
+//   }
+// };
+
+const findLongestArr = (arr) => {
+  let result = [];
+  arr.forEach((e) => result.push(e.length));
+  return Math.max(...result);
 };
 
 /*
@@ -176,12 +182,39 @@ const angleType = function (nbr) {
 
 Create a function to find the index of the greatest element of a given array of integers
 */
+const findGreatest = function (arr) {
+  let tmp = arr[0];
+  let notUnique = [0];
+  for (let i = 1; i < arr.length; i++) {
+    if (tmp < arr[i]) {
+      tmp = arr[i];
+      if (notUnique.length === 1) {
+        notUnique[0] = i;
+      } else {
+        notUnique = 0;
+        notUnique.push(i);
+      }
+    }
+    if (tmp === arr[i]) {
+      if (notUnique[0] !== i) {
+        notUnique.push(i);
+      }
+    }
+  }
+  if (tmp.length === 1) {
+    return tmp[0];
+  } else {
+    return notUnique;
+  }
+};
 
 /*
 14)
 
 Create a function to get the largest even number from an array of integers.
+*/
 
+/*
 15)
 
 Create a function to check two given numbers and return true if one of the number is 50 or if their sum is 50.
