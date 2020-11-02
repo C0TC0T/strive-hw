@@ -35,12 +35,29 @@ const biggestNbr = (a, b, c) => {
 5)
 Create a function to check whether two numbers are in range 40..60 or in the range 70..100 inclusive.
 */
+const dualRange = (i, j) => {
+  const chkRange = (m, n, o) => (o <= n && o >= m ? true : false);
+  if (chkRange(40, 60, i) && chkRange(40, 60, j)) {
+    return "inclusive in 40 - 60";
+  } else if (chkRange(70, 100, i) && chkRange(70, 100, j)) {
+    return "inclusive in 70 - 100";
+  }
+};
 
 /*
 6)
 
 Create a function to create a new string of specified copies (positive number) of a given string.
 */
+const multiStr = (str, nbr) => {
+  let arr = [];
+  if (nbr > 0) {
+    for (i = 0; i < nbr; i++) {
+      arr.push(str);
+    }
+  }
+  return arr;
+};
 
 /*
 
