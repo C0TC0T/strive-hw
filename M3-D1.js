@@ -271,7 +271,19 @@ const minAndMax = function (i, j) {
 17)
 
 Create a function to create new string with first 3 characters are in lower case and the others in upper case. If the string length is less than 3 convert all the characters in upper case.
+*/
+const lowUppercase = function (str) {
+  if (str.length <= 3) {
+    return str.toUpperCase;
+  } else {
+    return (
+      str.substr(0, 3).toLowerCase() +
+      str.substr(3, str.length - 1).toUpperCase()
+    );
+  }
+};
 
+/*
 18)
 
 Create a function to calculate the sum of the two given integers, If the sum is in the range 50..80 return 65 other wise return 80.
