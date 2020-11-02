@@ -48,10 +48,8 @@ or punctuation.  Consider capital letters to be the same as lower case
   anagrams('Hi there', 'Bye there') --> False
 */
 const anagrams = function (a, b) {
-  a.replace(/[\W_]/g, "");
-  b.replace(/[\W_]/g, "");
-  let m = a.toLowerCase().split("").sort();
-  let n = b.toLowerCase().split("").sort();
+  let m = a.replace(/[\W_]/g, "").toLowerCase().split("").sort();
+  let n = b.replace(/[\W_]/g, "").toLowerCase().split("").sort();
   if (m.length === n.length) {
     for (i = 0; i < m.length; i++) {
       if (m[i] !== n[i]) {
@@ -64,13 +62,21 @@ const anagrams = function (a, b) {
   }
 };
 
-console.log(anagrams("rail safety", "fairy tales"));
 /* 3) ANAGRAMS 2
 Given a word and a list of possible anagrams, select the correct sublist.
 --- Examples
     "listen" and a list of candidates like "enlists" "google" "inlets" "banana" the program should return a list containing "inlets".
 */
-const anagramsArr = function () {};
+const anagramsArr = function (arr) {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (anagrams(arr[0], arr[i])) {
+      result.push(arr[i]);
+    }
+  }
+  return result;
+};
+
 /* 4) PALINDROME
 Given a string, return true if the string is a palindrome
 or false if it is not.  Palindromes are strings that
