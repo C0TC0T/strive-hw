@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+    <!--
+        BINGO CHALLENGE!!!
+        Create programmatically (with JS) a BINGO board with 76 cells, from 1 to 76.
+        Create a button to randomize a number from 1 to 76. The same number should be highlighted on the bingo board
+
+        EXTRA:
+        - Take ALWAYS a new number (avoid randoming 10 3 times for example)
+        - Create a USER BOARD with random 24 numbers that highlights as the main board does
+        - Let the user choose HOW MANY user boards he's willing to play with and create them.
+    -->
+    <head>
+        <style>
+            body {
+            max-width: 90vw;
+            margin: 0 auto;
+            }
+
+            #leaderBoard {
+                margin: 0;
+                background: #000;
+                color: white;
+                width: 700px;
+                margin-bottom: 20px;
+                border: 6px solid transparent;
+                border-radius: 8px;
+            }
+            .leaderboardNumbers {
+                color: #ffffff;
+                display: inline-block;
+                width: 12%;
+                text-align: center;
+                border: 1px solid transparent;
+                margin:0 auto;
+                height: 5%;
+            }
+
+            #firstCard, #newCards {
+                margin: 0;
+                background: #1c1c1c;
+                color: white;
+                width: 45vw;
+                margin-bottom: 20px;
+                border: 6px solid transparent;
+                border-radius: 8px;
+
+            }
+            #firstCard .boardNumbers, #newCards .boardNumbers {
+                color: #ffffff;
+                display: inline-block;
+                width: 19.5%;
+                text-align: center;
+                border: 1px solid transparent;
+                margin:0 auto;
+            }
+            h2 {
+                font-weight: 300;
+                font-size: 26px;
+                margin-top: calc(100px / 2 - 22px);
+            }
+            h3 {
+                font-weight: 300;
+                font-size: 20px;
+                margin: 8px auto;
+            }
+            input {
+                width: 100%;
+                min-height: 24px;
+                background-color: #1b1b1b;
+                color: white;
+                border: none;
+                border-radius: 3px;
+                padding: 10px;
+                font-weight: bold;
+            }
+            input[type="button"] {
+                background-color: #00ff84;
+                color: #1b1b1b;
+                cursor: pointer;
+                min-height: 44px;
+                border-radius: 6px;
+                margin-bottom: 20px;
+            }
+            h1 {
+                font-size: 64px;
+            }
+            #newResult {
+                font-weight: 300;
+                font-style: italic;
+                font-size: 16px;
+            }
+            .bingo {
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+        const seventySixf = function (){
+            let seventySix = [];
+            for(let i = 0; i < 76; i++) {
+                seventySix.push(i + 1);
+            }
+            return seventySix;
+        }
+        const leader = function () {
+            let seventySix = []
+            seventySix = seventySixf();
+            const board = document.querySelector('#leaderBoard');
+            for (let i = 0; i < 76; i++) {
+                const child = document.createElement('div');
+                child.className = "leaderboardNumbers";
+                const leaderboardNumbers = document.createElement('h3');
+                leaderboardNumbers.innerText = seventySix[i];
+                child.appendChild(leaderboardNumbers)
+                board.appendChild(child);
+            }
+            // return seventySix;
+        }
+        const firstCard = function () {
+            let seventySix = []
+            seventySix = seventySixf();
+            let array = []
+            // console.log(seventySix);
+                for (let i = 0; i < 25; i++) {
+                    let j = Math.floor(Math.random() * (76 - i));
+                    array.push(seventySix[j])
+                    seventySix.splice(j,1)
+                }
+            const board = document.querySelector('#firstCard');
+                for (let i = 0; i < 25; i++) {
+                    const child = document.createElement('div');
+                    child.className = "boardNumbers";
+                    const boardNumbers = document.createElement('h2');
+                    boardNumbers.innerText = array[i];
+                    child.appendChild(boardNumbers)
+                    board.appendChild(child);
+        }
+    }
+        const newCard = function () {
+            let seventySix = []
+            seventySix = seventySixf();
+            let array = []
+                for (let i = 0; i < 25; i++) {
+                    let j = Math.floor(Math.random() * (76 - i));
+                    array.push(seventySix[j])
+                    seventySix.splice(j,1)
+                }
+                const board = document.querySelector('#newCards');
+                for (let i = 0; i < 25; i++) {
+                    const child = document.createElement('div');
+                    child.className = "boardNumbers";
+                    const boardNumbers = document.createElement('h2');
+                    boardNumbers.innerText = array[i];
+                    child.appendChild(boardNumbers)
+                    board.appendChild(child);
+                }
+        }
+        const lucky = function () {
+            let luck = Math.floor(Math.random() * 76 + 1);
+            return luck;
+        }
+        <!-- LOAD -->
+        window.onload = function () {
+            leader();
+            firstCard();
+            let cardsTotal = 1;
+            //results
+            let resultNumbers = document.querySelector('#resultNumbers')
+            let nbr = document.createElement('div');
+            nbr.className = "luckyNumbers";
+            const luckyButton = document.querySelector('#luckyButton');
+            let result = [];
+            let boardNumbers = document.querySelectorAll('.boardNumbers');
+            let leaderboardNumbers = document.querySelectorAll('.leaderboardNumbers')
+
+            luckyButton.onclick = function (event) {
+                result.push(lucky());
+                leaderboardNumbers[result[result.length - 1] -1].classList.add("bingo")
+                let array = [];
+                let boardNumbers = [];
+                boardNumbers = document.querySelectorAll('.boardNumbers');
+                // for(let j = 0; j <= cardsTotal; j++) {
+                    for (let i = 0; i < 25; i++) {
+                                    if (result[result.length - 1] === parseInt(boardNumbers[i].innerText)) {
+                                        boardNumbers[i].classList.add("bingo");
+                                    }
+                    }
+                // }
+                // print new result in page bottom
+                //console.log(result)
+                document.querySelector("#newResult").innerText = `The Lucky Numbers are ${result}` ;
+            }
+
+            newCardButton.onclick = function (event) {
+                    cardsTotal += 1;
+                    const newBoard = document.createElement('div');
+                    // const spacer = document.createElement('div');
+                    // spacer.className = "spacer";
+                    newBoard.className = "bingoBoard";
+                    newCard();
+            }
+    }
+        </script>
+        <h1>Lottery</h1>
+        <div id="leaderBoard"></div>
+        <br>
+        <div id="board" class="bingoBoard"></div>
+        <hr >
+        <div id="cards">
+            <div id="firstCard"></div>
+            <div id="newCards"></div>
+            <div id="newCardButton">
+                <input type="button" value="New Card">
+            </div>
+        </div>
+        <div id="lucky">
+            <div id="luckyButton">
+                <input type="button" value="Am I lucky">
+            </div>
+        <div id="resultNumbers">
+            <span id ="newResult"></span>
+        </div>
+        </div>
+    </body>
+</html>

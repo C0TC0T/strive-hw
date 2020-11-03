@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./M2-D8.css" />
+    <title>M2-D8</title>
+  </head>
+  <body>
+    <div style="background-color: #007bff; font-weight: 400">
+      <nav
+        class="navbar container navbar-expand-lg navbar-dark"
+        style="background: #007bff"
+      >
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active mx-auto">
+              <a class="nav-link" href="#"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li> -->
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <section class="container d-flex text-center flex-column">
+      <h2>Exercise 1</h2>
+      <p class="h5 mb-4">
+        Ricreate this table just using Bootstrap4 classes or styling, without
+        adding / removing any DOM element
+      </p>
+      <div class="jumbotron row">
+        <div
+          class="col col-md-6 justify-content-center d-flex align-items-center"
+        >
+          <ul>
+            <li>First Column</li>
+            <li>Height 400px;</li>
+            <li>Green-ish background</li>
+            <li>Text Centered</li>
+          </ul>
+        </div>
+        <div class="col col-md-2 d-flex align-items-end text-left">
+          <ul>
+            <li>Second Column</li>
+            <li>Text To the bottom</li>
+            <li>Bold, blueish background</li>
+          </ul>
+        </div>
+        <div class="col col-md-4 d-flex flex-column">
+          <div class="col justify-content-center d-flex align-items-center">
+            Third Column Part 1
+          </div>
+          <div class="col justify-content-center d-flex align-items-center">
+            Third Column Part 2
+          </div>
+          <div class="col justify-content-center d-flex align-items-center">
+            Third Column Part 3
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container d-flex text-center flex-column">
+      <h2>Exercise 2</h2>
+      <div class="col col-lg-6 justify-content-center mx-auto">
+        <p class="mb-5">
+          Create a pricing table to sell your product! Classical, 3 card
+          approach with 3 pricing. This is a classical user/priced product, with
+          new feature enabled for the pro / enterprise version.
+        </p>
+      </div>
+      <div class="row pricing justify-content-around">
+        <div class="card mx-2">
+          <div class="card-header">Free</div>
+          <div class="card-body">
+            <p>
+              <span class="price">€0</span><span class="period"> / mo</span>
+            </p>
+            <ul>
+              <li>10 users included</li>
+              <li>2 GB of storage</li>
+              <li>Email Support</li>
+              <li>Help center access</li>
+            </ul>
+          </div>
+          <button class="btn btn-outline-primary">Sign up for free</button>
+        </div>
+        <div class="card mx-2">
+          <div class="card-header">Pro</div>
+          <div class="card-body">
+            <p>
+              <span class="price">€15</span><span class="period"> / mo</span>
+            </p>
+            <ul>
+              <li>20 users included</li>
+              <li>10 GB of storage</li>
+              <li>Priority email Support</li>
+              <li>Help center access</li>
+            </ul>
+          </div>
+          <button class="btn btn-primary">Get Started</button>
+        </div>
+        <div class="card mx-2">
+          <div class="card-header">Enterprise</div>
+          <div class="card-body">
+            <p>
+              <span class="price">€29</span><span class="period"> / mo</span>
+            </p>
+            <ul>
+              <li>30 users included</li>
+              <li>15 GB of storage</li>
+              <li>Phone and email Support</li>
+              <li>Help center access</li>
+            </ul>
+          </div>
+          <button class="btn btn-primary">Contact Us</button>
+        </div>
+      </div>
+    </section>
+    <section class="container d-flex text-center flex-column">
+      <h2>Exercise 3</h2>
+      <p>
+        And this could be the "video" part of your website! Here you can add all
+        the video content, displayed inside cards.
+      </p>
+      <div
+        class="row row-cols-4 justify-content-between"
+        style="background-color: #f5f5f5"
+      >
+        <div class="card p-0 col mx-3 my-3">
+          <!-- <img src="" class="card-img-top" alt="..." /> -->
+          <div class="card-img-top w-auto">Thumbnail</div>
+          <div class="card-body">
+            <!-- <h5 class="card-title">Card title</h5> -->
+            <p class="text-left thumb-text">
+              Here you can place your video description, in order to inform the
+              user of what to expect by clicking on the link
+            </p>
+            <div class="row mx-auto d-flex thumb-labels">
+              <div
+                class="btn-group d-flex thumb-left btn-group-toggle"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-secondary label-btn-text">
+                  <input type="radio" name="options" id="option1" />
+                  View
+                </label>
+                <label class="btn btn-outline-secondary label-btn-text">
+                  <input type="radio" name="options" id="option2" /> Edit
+                </label>
+              </div>
+              <div class="label-btn-text d-flex thumb-right ml-auto">
+                9 mins
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-0 col mx-3 my-3">
+          <!-- <img src="" class="card-img-top" alt="..." /> -->
+          <div class="card-img-top">Thumbnail</div>
+          <div class="card-body">
+            <!-- <h5 class="card-title">Card title</h5> -->
+            <p class="text-left thumb-text">
+              Here you can place your video description, in order to inform the
+              user of what to expect by clicking on the link
+            </p>
+            <div class="row mx-auto d-flex thumb-labels">
+              <div
+                class="btn-group d-flex thumb-left btn-group-toggle"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-secondary label-btn-text">
+                  <input type="radio" name="options" id="option1" />
+                  View
+                </label>
+                <label class="btn btn-outline-secondary label-btn-text">
+                  <input type="radio" name="options" id="option2" /> Edit
+                </label>
+              </div>
+              <div class="label-btn-text d-flex thumb-right ml-auto">
+                9 mins
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-0 col mx-3 my-3">
+          <!-- <img src="" class="card-img-top" alt="..." /> -->
+          <div class="card-img-top w-auto">Thumbnail</div>
+          <div class="card-body">
+            <!-- <h5 class="card-title">Card title</h5> -->
+            <p class="text-left thumb-text">
+              Here you can place your video description, in order to inform the
+              user of what to expect by clicking on the link
+            </p>
+            <div class="row mx-auto d-flex thumb-labels">
+              <div
+                class="btn-group d-flex thumb-left btn-group-toggle"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-secondary label-btn-text">
+                  <input type="radio" name="options" id="option1" />
+                  View
+                </label>
+                <label class="btn btn-outline-secondary label-btn-text">
+                  <input type="radio" name="options" id="option2" /> Edit
+                </label>
+              </div>
+              <div class="label-btn-text d-flex thumb-right ml-auto">
+                9 mins
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-0 col mx-3 my-3">
+          <!-- <img src="" class="card-img-top" alt="..." /> -->
+          <div class="card-img-top w-auto">Thumbnail</div>
+          <div class="card-body">
+            <!-- <h5 class="card-title">Card title</h5> -->
+            <p class="text-left thumb-text">
+              Here you can place your video description, in order to inform the
+              user of what to expect by clicking on the link
+            </p>
+            <div class="row mx-auto d-flex thumb-labels">
+              <div
+                class="btn-group d-flex thumb-left btn-group-toggle"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-secondary label-btn-text">
+                  <input type="radio" name="options" id="option1" />
+                  View
+                </label>
+                <label class="btn btn-outline-secondary label-btn-text">
+                  <input type="radio" name="options" id="option2" /> Edit
+                </label>
+              </div>
+              <div class="label-btn-text d-flex thumb-right ml-auto">
+                9 mins
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-0 col mx-3 my-3">
+          <!-- <img src="" class="card-img-top" alt="..." /> -->
+          <div class="card-img-top w-auto">Thumbnail</div>
+          <div class="card-body">
+            <!-- <h5 class="card-title">Card title</h5> -->
+            <p class="text-left thumb-text">
+              Here you can place your video description, in order to inform the
+              user of what to expect by clicking on the link
+            </p>
+            <div class="row mx-auto d-flex thumb-labels">
+              <div
+                class="btn-group d-flex thumb-left btn-group-toggle"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-secondary label-btn-text">
+                  <input type="radio" name="options" id="option1" />
+                  View
+                </label>
+                <label class="btn btn-outline-secondary label-btn-text">
+                  <input type="radio" name="options" id="option2" /> Edit
+                </label>
+              </div>
+              <div class="label-btn-text d-flex thumb-right ml-auto">
+                9 mins
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-0 col mx-3 my-3">
+          <!-- <img src="" class="card-img-top" alt="..." /> -->
+          <div class="card-img-top w-auto">Thumbnail</div>
+          <div class="card-body">
+            <!-- <h5 class="card-title">Card title</h5> -->
+            <p class="text-left thumb-text">
+              Here you can place your video description, in order to inform the
+              user of what to expect by clicking on the link
+            </p>
+            <div class="row mx-auto d-flex thumb-labels">
+              <div
+                class="btn-group d-flex thumb-left btn-group-toggle"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-secondary label-btn-text">
+                  <input type="radio" name="options" id="option1" />
+                  View
+                </label>
+                <label class="btn btn-outline-secondary label-btn-text">
+                  <input type="radio" name="options" id="option2" /> Edit
+                </label>
+              </div>
+              <div class="label-btn-text d-flex thumb-right ml-auto">
+                9 mins
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-0 col mx-3 my-3">
+          <!-- <img src="" class="card-img-top" alt="..." /> -->
+          <div class="card-img-top w-auto">Thumbnail</div>
+          <div class="card-body">
+            <!-- <h5 class="card-title">Card title</h5> -->
+            <p class="text-left thumb-text">
+              Here you can place your video description, in order to inform the
+              user of what to expect by clicking on the link
+            </p>
+            <div class="row mx-auto d-flex thumb-labels">
+              <div
+                class="btn-group d-flex thumb-left btn-group-toggle"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-secondary label-btn-text">
+                  <input type="radio" name="options" id="option1" />
+                  View
+                </label>
+                <label class="btn btn-outline-secondary label-btn-text">
+                  <input type="radio" name="options" id="option2" /> Edit
+                </label>
+              </div>
+              <div class="label-btn-text d-flex thumb-right ml-auto">
+                9 mins
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-0 col mx-3 my-3">
+          <!-- <img src="" class="card-img-top" alt="..." /> -->
+          <div class="card-img-top w-auto">Thumbnail</div>
+          <div class="card-body">
+            <!-- <h5 class="card-title">Card title</h5> -->
+            <p class="text-left thumb-text">
+              Here you can place your video description, in order to inform the
+              user of what to expect by clicking on the link
+            </p>
+            <div class="row mx-auto d-flex thumb-labels">
+              <div
+                class="btn-group d-flex thumb-left btn-group-toggle"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-secondary label-btn-text">
+                  <input type="radio" name="options" id="option1" />
+                  View
+                </label>
+                <label class="btn btn-outline-secondary label-btn-text">
+                  <input type="radio" name="options" id="option2" /> Edit
+                </label>
+              </div>
+              <div class="label-btn-text d-flex thumb-right ml-auto">
+                9 mins
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-0 col mx-3 my-3">
+          <!-- <img src="" class="card-img-top" alt="..." /> -->
+          <div class="card-img-top w-auto">Thumbnail</div>
+          <div class="card-body">
+            <!-- <h5 class="card-title">Card title</h5> -->
+            <p class="text-left thumb-text">
+              Here you can place your video description, in order to inform the
+              user of what to expect by clicking on the link
+            </p>
+            <div class="row mx-auto d-flex thumb-labels">
+              <div
+                class="btn-group d-flex thumb-left btn-group-toggle"
+                data-toggle="buttons"
+              >
+                <label class="btn btn-outline-secondary label-btn-text">
+                  <input type="radio" name="options" id="option1" />
+                  View
+                </label>
+                <label class="btn btn-outline-secondary label-btn-text">
+                  <input type="radio" name="options" id="option2" /> Edit
+                </label>
+              </div>
+              <div class="label-btn-text d-flex thumb-right ml-auto">
+                9 mins
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container d-flex text-center flex-column">
+      <h2>Exercise 4</h2>
+      <p class="h6 mb-5">
+        Structure this section as a blog! Check the image and recreate as best
+        as you can!
+      </p>
+      <div class="row">
+        <div class="col col-8">
+          <p class="text-left ml-3">
+            <span style="font-size: 36px; font-weight: 600">Page Heading</span
+            ><span style="font-size: 24px; font-weight: 500">
+              Secondary Text
+            </span>
+          </p>
+          <div class="post">
+            <img src="https://via.placeholder.com/750x300" class="img-fluid" />
+            <div class="card-body">
+              <h6>Post Title</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Doloribus consequatur dolorum ipsa cumque perspiciatis
+                voluptates quam eveniet sit! Tempora iusto a iste aperiam quas
+                quis earum sunt eaque ab vel.
+              </p>
+              <button class="btn btn-primary d-flex justify-content-start">
+                Read more →
+              </button>
+            </div>
+            <div class="card-footer">
+              Post on January 10, 2020 by <a href="">Admin</a>
+            </div>
+          </div>
+          <div class="post">
+            <img src="https://via.placeholder.com/750x300" class="img-fluid" />
+            <div class="card-body">
+              <h6>Post Title</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Doloribus consequatur dolorum ipsa cumque perspiciatis
+                voluptates quam eveniet sit! Tempora iusto a iste aperiam quas
+                quis earum sunt eaque ab vel.
+              </p>
+              <button class="btn btn-primary d-flex justify-content-start">
+                Read more →
+              </button>
+            </div>
+            <div class="card-footer">
+              Post on January 12, 2020 by <a href="">Admin</a>
+            </div>
+          </div>
+          <div class="post">
+            <img src="https://via.placeholder.com/750x300" class="img-fluid" />
+            <div class="card-body">
+              <h6>Post Title</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Doloribus consequatur dolorum ipsa cumque perspiciatis
+                voluptates quam eveniet sit! Tempora iusto a iste aperiam quas
+                quis earum sunt eaque ab vel.
+              </p>
+              <button class="btn btn-primary d-flex justify-content-start">
+                Read more →
+              </button>
+            </div>
+            <div class="card-footer">
+              Post on January 1, 2020 by <a href="">Admin</a>
+            </div>
+          </div>
+          <nav aria-label="blog-navigation">
+            <ul class="pagination">
+              <li class="page-item">
+                <a
+                  class="page-link"
+                  href="#"
+                  tabindex="-1"
+                  aria-disabled="true"
+                >
+                  ← Older
+                </a>
+              </li>
+              <li class="page-item disabled">
+                <a class="page-link" href="#">Newer →</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col col-4 blog-sidebar">
+          <!-- <div class="col blog-sidebar-item">
+            <div class="blog-sidebar-header">Find in my blog</div>
+            <div class="blog-sidebar-body"></div>
+          </div> -->
+          <div class="card w-auto mb-4">
+            <div class="card-header text-left font-weight-bold">
+              Find in my blog
+            </div>
+            <div class="card-body">
+              <form class="form-inline">
+                <input
+                  class="form-control"
+                  type="search"
+                  placeholder="Search for..."
+                  aria-label="Search"
+                />
+                <button class="btn btn-secondary mx-0" type="submit">
+                  Search!
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="card w-auto mb-4">
+            <div class="card-header text-left font-weight-bold">Categories</div>
+            <div class="card-body px-0 text-left">
+              <div class="row mx-2">
+                <div class="col col-sm-6">
+                  <a href="">Web Design</a><br />
+                  <a href="">HTML</a><br />
+                  <a href="">CSS</a>
+                </div>
+                <div class="col col-sm-6">
+                  <a href="">JavaScript</a><br />
+                  <a href="">SASS</a><br />
+                  <a href="">Bootstrap4</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card w-auto mb-4">
+            <div class="card-header text-left font-weight-bold">Widget</div>
+            <div class="card-body text-left">
+              <div>
+                <p>
+                  Usually here you can put all your custom widget to enhanche
+                  the user experience
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container d-flex text-center flex-column">
+      <h2>Exercise 5</h2>
+      <p class="mb-5">Footer time! Never underestimate the power of footers</p>
+      <hr />
+      <div class="my-5 row row-cols-3 mx-0 px-0 text-left">
+        <div class="col">
+          <h6 style="font-weight: 600">Features</h6>
+          <ul>
+            <li>Cool stuff</li>
+            <li>Random feature</li>
+            <li>Team feature</li>
+            <li>Stuff for developers</li>
+            <li>Another One</li>
+            <li>Last time</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h6>Resources</h6>
+          <ul>
+            <li>Resource</li>
+            <li>Resource name</li>
+            <li>Another resource</li>
+            <li>Final resource</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h6>About</h6>
+          <ul>
+            <li>Team</li>
+            <li>Locations</li>
+            <li>Privacy</li>
+            <li>Terms</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
